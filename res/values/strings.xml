@@ -4,11 +4,24 @@
     <string name="app_name">BDE-FORUM</string>
     <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
+    
+    
     <string name="pseudo">Pseudo : </string>
     <string name="pseudo2">Pseudo</string>
     <string name="mdp">Mot de Passe : </string>
     <string name="mdp2">Mot de Passe</string>
     <string name="Sconnect">Restez connecté</string>
     <string name="connect">Connexion</string>
-
+    
+    <string name="firstpage">1</string>
+	<string name="secondpage">2</string>
+	<string name="thread1">thread 1</string>
+	<string name="thread2">thread 2</string>
+	<string name="thread3">thread 3</string>
+	<string name="thread4">thread 4</string>
+	<string name="thread5">thread 5</string>
+	<string name="thread6">thread 6</string>
+	<string name="thread7">thread 7</string>
+	<string name="nouveau">Nouveau thread</string>
+	
 </resources>
