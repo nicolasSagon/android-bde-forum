@@ -12,6 +12,7 @@
     <string name="mdp2">Mot de Passe</string>
     <string name="Sconnect">Restez connecté</string>
     <string name="connect">Connexion</string>
+    <string name="resultat">resultat</string>
     
     <string name="firstpage">1</string>
 	<string name="secondpage">2</string>
