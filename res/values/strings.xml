@@ -2,20 +2,21 @@
 <resources>
 
     <string name="app_name">BDE-FORUM</string>
-    <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
     
-    
+    <!-- Strings pour la page Login -->
     <string name="pseudo">Pseudo : </string>
     <string name="pseudo2">Pseudo</string>
     <string name="mdp">Mot de Passe : </string>
     <string name="mdp2">Mot de Passe</string>
     <string name="Sconnect">Restez connecté</string>
     <string name="connect">Connexion</string>
-    <string name="resultat">resultat</string>
     
+    
+    <!-- Strings pour la page des threads -->
     <string name="firstpage">1</string>
-	<string name="secondpage">2</string>
+    <string name="page"></string>
+	<string name="lastpage">2</string>
 	<string name="thread1">thread 1</string>
 	<string name="thread2">thread 2</string>
 	<string name="thread3">thread 3</string>

@@ -6,15 +6,12 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
-
 
 public class MainActivity extends Activity {
-
+	
 	private Button connect = null;
 	private EditText pseudo = null;
 	private EditText pass = null;
-	private TextView res = null;
 	
 	
 		@Override
@@ -37,14 +34,13 @@ public class MainActivity extends Activity {
 					String ps = pseudo.getText().toString();
 					pass = (EditText)findViewById(R.id.password);
 					String pa = pass.getText().toString();
-					res = (TextView)findViewById(R.id.result);
-					res.setText("nom : " + ps + " passe : " + pa);
-				
+					//Si la connexion est bonne
+					setContentView(R.layout.threads);
 				
 			}
 		};
-}
 
+}
 	
 
 

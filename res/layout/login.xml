@@ -8,7 +8,7 @@ android:layout_height="wrap_content">
 	    xmlns:android="http://schemas.android.com/apk/res/android"
 	    android:layout_width="fill_parent"
 	    android:layout_height="wrap_content"
-	    android:background="#e2ddc3"
+	    style="@style/beigeBackground"
 	    android:orientation="vertical" >
 
     	<Gallery
@@ -44,10 +44,8 @@ android:layout_height="wrap_content">
     	    android:layout_height="wrap_content"
     	    android:ems="10"
     	    android:inputType="textPassword"
-    	    android:hint="@string/mdp2" >
+    	    android:hint="@string/mdp2" />
 
-    	    <requestFocus />
-    	</EditText>
 
     	<CheckBox
         	android:id="@+id/stayConnected"
@@ -65,13 +63,7 @@ android:layout_height="wrap_content">
         	android:layout_gravity="center"
         	android:layout_marginTop="20dip"
         	android:text="@string/connect" />
-    	<TextView
-    	    android:id="@+id/result"
-        	android:layout_width="fill_parent"
-        	android:layout_height="wrap_content"
-        	android:layout_marginTop="20dip"
-        	android:gravity="center"
-        	android:text="@string/resultat" />
+    	
 
 	</LinearLayout>
 </ScrollView>
