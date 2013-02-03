@@ -29,8 +29,8 @@ public final class R {
         public static final int auteur5=0x7f08000e;
         public static final int connection=0x7f080004;
         public static final int gallery1=0x7f080000;
-        public static final int menu_settings=0x7f080016;
-        public static final int nouveau=0x7f080015;
+        public static final int menu_settings=0x7f080017;
+        public static final int nouveau=0x7f080016;
         public static final int page=0x7f080013;
         public static final int page1=0x7f080012;
         public static final int page2=0x7f080014;
@@ -43,6 +43,7 @@ public final class R {
         public static final int repondre=0x7f080011;
         public static final int reponse=0x7f080010;
         public static final int stayConnected=0x7f080003;
+        public static final int texte=0x7f080015;
         public static final int titre=0x7f080005;
     }
     public static final class layout {
@@ -68,6 +69,8 @@ public final class R {
         public static final int menu_settings=0x7f050001;
         public static final int nouveau=0x7f050012;
         public static final int page=0x7f050009;
+        /**  Strings pour les posts 
+         */
         public static final int post1=0x7f050013;
         public static final int post2=0x7f050014;
         public static final int post3=0x7f050015;

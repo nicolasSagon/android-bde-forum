@@ -36,6 +36,7 @@ style="@style/beigeBackground" >
 			android:layout_marginTop="20dip" />
 		
 	    <TextView
+	        android:id="@+id/texte"
 	        android:gravity="center"
 	        android:padding="15dip"
 	        android:text="@string/thread1"

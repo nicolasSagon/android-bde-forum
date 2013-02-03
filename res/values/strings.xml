@@ -25,6 +25,8 @@
 	<string name="thread6">thread 6</string>
 	<string name="thread7">thread 7</string>
 	<string name="nouveau">Nouveau thread</string>
+	
+	<!-- Strings pour les posts -->
 	<string name="post1">texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttextttexttextttextttextttextttexttext</string>
 	<string name="post2">texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttextttexttextttextttextttextttexttext</string>
 	<string name="post3">texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttextttexttextttextttextttextttexttext</string>
