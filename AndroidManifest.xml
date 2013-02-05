@@ -23,6 +23,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="android.bde_forum.Categorie"/>
+        <activity
+            android:name="android.bde_forum.Threads"/>
+        <activity
+            android:name="android.bde_forum.Posts"/>
     </application>
 
 </manifest>

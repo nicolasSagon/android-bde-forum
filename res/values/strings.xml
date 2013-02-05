@@ -36,5 +36,12 @@
 	<string name="auteur">auteur a écrit :</string>
 	<string name="repondre">Envoyer</string>
 	<string name="reponse">Répondre</string>
+	<string name="categorie1">categorie1</string>
+	<string name="categorie2">categorie2</string>
+	<string name="categorie3">categorie3</string>
+	<string name="categorie5">categorie5</string>
+	<string name="categorie4">categorie4</string>
+	<string name="topic1">topic1</string>
+	<string name="topic2">topic2</string>
 	
 </resources>
