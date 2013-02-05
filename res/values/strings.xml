@@ -43,5 +43,12 @@
 	<string name="categorie4">categorie4</string>
 	<string name="topic1">topic1</string>
 	<string name="topic2">topic2</string>
+	<string name="title_activity_settings">SettingsActivity</string>
+    <string name="message">Boite de réception</string>
+    <string name="search">Rechercher</string>
+    <string name="parameters">Paramètres</string>
+    <string name="logout">Déconnexion</string>
+    <string name="about">A propos</string>
+    <string name="createAccount">Créer Compte</string>
 	
 </resources>
