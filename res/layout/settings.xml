@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/beigeBackground"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:scrollbars="vertical" >
+
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/message"
+            style="@style/textViewSettings"
+            android:text="@string/message" />
+
+        <View
+            style="@style/separation"
+            android:layout_height="2dip" />
+
+        <TextView
+            android:id="@+id/search"
+            style="@style/textViewSettings"
+            android:text="@string/search" />
+
+        <View
+            style="@style/separation"
+            android:layout_height="2dip" />
+
+        <TextView
+            android:id="@+id/parameters"
+            style="@style/textViewSettings"
+            android:text="@string/parameters" />
+
+        <View
+            style="@style/separation"
+            android:layout_height="2dip" />
+
+        <TextView
+            android:id="@+id/favoris"
+            style="@style/textViewSettings"
+            android:text="@string/favorites" />
+
+        <View
+            style="@style/separation"
+            android:layout_height="2dip" />
+
+        <TextView
+            android:id="@+id/createAccount"
+            style="@style/textViewSettings"
+            android:text="@string/myAccount" />
+
+        <View
+            style="@style/separation"
+            android:layout_height="2dip" />
+
+        <TextView
+            android:id="@+id/logout"
+            style="@style/textViewSettings"
+            android:text="@string/logout" />
+
+        <View
+            style="@style/separation"
+            android:layout_height="2dip" />
+
+        <TextView
+            android:id="@+id/about"
+            style="@style/textViewSettings"
+            android:layout_height="53dp"
+            android:text="@string/about" />
+    </TableLayout>
+
+</ScrollView>

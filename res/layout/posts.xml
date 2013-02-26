@@ -1,174 +1,137 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-android:layout_width="fill_parent"
-android:layout_height="fill_parent"
-style="@style/beigeBackground" >
+    style="@style/beigeBackground"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
 
-	<TableLayout
-	    xmlns:android="http://schemas.android.com/apk/res/android"
-	    android:layout_width="fill_parent"
-	    android:layout_height="27dp">
-	    
-	    <TextView
-	        android:id="@+id/titre"
-	        android:layout_weight="1.72"
-	        android:gravity="left"
-	        android:padding="15dip"
-	        android:text="@string/thread1"
-	        android:textColor="@color/black"
-	        android:textSize="20sp" />
-		
-		<View
-			android:layout_height="2dip"
-			style="@style/separation"
-			android:layout_marginTop="20dip" />
-		
-		<TextView
-		    android:textColor="#0000FF"
-		    android:id="@+id/auteur"
-		    style="@style/roseBackground"
-		    android:layout_weight="1.72"
-		    android:gravity="left"
-		    android:padding="15dip"
-		    android:text="@string/auteur" />
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="27dp" >
 
-	    <TextView
-	        android:textColor="#000000"
-	        android:id="@+id/post1"
-	        style="@style/roseBackground"
-	        android:layout_weight="1.72"
-	        android:gravity="left"
-	        android:padding="15dip"
-	        android:text="@string/post1" />
-	    
+        <TextView
+            android:id="@+id/titre"
+            android:layout_weight="1.72"
+            style="@style/beigeBackground"
+            android:gravity="left"
+            android:padding="15dip"
+            android:text="@string/thread1"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
 
-	   
-	    <View
-			android:layout_height="2dip"
-			style="@style/separation" />
+        <View
+            style="@style/separation"
+            android:layout_height="2dip"
+            android:layout_marginTop="20dip" />
 
-		<TextView
-		    android:textColor="#0000FF"
-		    android:id="@+id/auteur2"
-		    style="@style/roseBackground"
-		    android:layout_weight="1.72"
-		    android:gravity="left"
-		    android:padding="15dip"
-		    android:text="@string/auteur" />
+        <TextView
+            android:id="@+id/auteur"
+            style="@style/textViewPosts"
+            android:text="@string/auteur"
+            android:textColor="#0000FF" />
 
-	    <TextView
-	        android:textColor="#000000"
-	        android:id="@+id/post2"
-	        style="@style/roseBackground"
-	        android:layout_weight="1.72"
-	        android:gravity="left"
-	        android:padding="15dip"
-	        android:text="@string/post2" />
-	    
-	    <View
-			android:layout_height="2dip"
-			style="@style/separation" />
+        <TextView
+            android:id="@+id/post1"
+            style="@style/textViewPosts"
+            android:text="@string/post1"
+            android:textColor="#000000" />
 
-		<TextView
-		    android:textColor="#0000FF"
-		    android:id="@+id/auteur3"
-		    style="@style/roseBackground"
-		    android:layout_weight="1.72"
-		    android:gravity="left"
-		    android:padding="15dip"
-		    android:text="@string/auteur" />
+        <View
+            style="@style/separation"
+            android:layout_height="2dip" />
 
-	    <TextView
-	        android:textColor="#000000"
-	        android:id="@+id/post3"
-	        style="@style/roseBackground"
-	        android:layout_weight="1.72"
-	        android:gravity="left"
-	        android:padding="15dip"
-	        android:text="@string/post3" />
-	    
-	    <View
-			android:layout_height="2dip"
-			style="@style/separation" />
-	    
-		<TextView
-		    android:textColor="#0000FF"
-		    android:id="@+id/auteur4"
-		    style="@style/roseBackground"
-		    android:layout_weight="1.72"
-		    android:gravity="left"
-		    android:padding="15dip"
-		    android:text="@string/auteur" />
+        <TextView
+            android:id="@+id/auteur2"
+            style="@style/textViewPosts"
+            android:text="@string/auteur"
+            android:textColor="#0000FF" />
 
-	    <TextView
-	        android:textColor="#000000"
-	        android:id="@+id/post4"
-	        style="@style/roseBackground"
-	        android:layout_weight="1.72"
-	        android:gravity="left"
-	        android:padding="15dip"
-	        android:text="@string/post4" />
-	    
-	    <View
-			android:layout_height="2dip"
-			style="@style/separation" />
-	    
-		<TextView
-		    android:textColor="#0000FF"
-		    android:id="@+id/auteur5"
-		    style="@style/roseBackground"
-		    android:layout_weight="1.72"
-		    android:gravity="left"
-		    android:padding="15dip"
-		    android:text="@string/auteur" />
+        <TextView
+            android:id="@+id/post2"
+            style="@style/textViewPosts"
+            android:text="@string/post2"
+            android:textColor="#000000" />
 
-	    <TextView
-	        android:textColor="#000000"
-	        android:id="@+id/post5"
-	        style="@style/roseBackground"
-	        android:layout_weight="1.72"
-	        android:gravity="left"
-	        android:padding="15dip"
-	        android:text="@string/post5" />
+        <View
+            style="@style/separation"
+            android:layout_height="2dip" />
 
-	    
-	    <View
-			android:layout_height="2dip"
-			style="@style/separation" />
-	    
-	    <EditText
-	        android:layout_marginTop="20dip"
-        	android:id="@+id/reponse"
-        	android:layout_width="fill_parent"
-        	android:layout_height="wrap_content"
-        	android:hint="@string/reponse" />
-	    
-	    <Button
-			android:id="@+id/repondre"
-			android:layout_height="wrap_content"
-			android:text="@string/repondre"
-			android:layout_marginTop="20dip"/>
-	    	
-		<TableRow
-			android:gravity="center"
-			android:layout_marginTop="20dip" >
-			    
-			<Button
-		        android:layout_height="wrap_content"
-		        android:text="@string/firstpage" />
-			    
-			<TextView
-				android:layout_height="wrap_content"
-			    android:text="@string/page" 
-				/>
+        <TextView
+            android:id="@+id/auteur3"
+            style="@style/textViewPosts"
+            android:text="@string/auteur"
+            android:textColor="#0000FF" />
 
-			<Button
-				android:layout_height="wrap_content"
-		    	android:text="@string/lastpage"/>
-		
-		</TableRow>
-	    
-	</TableLayout>
+        <TextView
+            android:id="@+id/post3"
+            style="@style/textViewPosts"
+            android:text="@string/post3"
+            android:textColor="#000000" />
 
+        <View
+            style="@style/separation"
+            android:layout_height="2dip" />
+
+        <TextView
+            android:id="@+id/auteur4"
+            style="@style/textViewPosts"
+            android:text="@string/auteur"
+            android:textColor="#0000FF" />
+
+        <TextView
+            android:id="@+id/post4"
+            style="@style/textViewPosts"
+            android:text="@string/post4"
+            android:textColor="#000000" />
+
+        <View
+            style="@style/separation"
+            android:layout_height="2dip" />
+
+        <TextView
+            android:id="@+id/auteur5"
+            style="@style/textViewPosts"
+            android:text="@string/auteur"
+            android:textColor="#0000FF" />
+
+        <TextView
+            android:id="@+id/post5"
+            style="@style/textViewPosts"
+            android:text="@string/post5"
+            android:textColor="#000000" />
+
+        <View
+            style="@style/separation"
+            android:layout_height="2dip" />
+
+        <EditText
+            android:id="@+id/reponse"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dip"
+            android:hint="@string/reponse" />
+
+        <Button
+            android:id="@+id/repondre"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dip"
+            android:text="@string/repondre" />
+
+        <TableRow
+            android:layout_marginTop="20dip"
+            android:gravity="center" >
+
+            <Button
+                android:layout_height="wrap_content"
+                android:text="@string/firstpage" />
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:text="@string/page" />
+
+            <Button
+                android:layout_height="wrap_content"
+                android:text="@string/lastpage" />
+        </TableRow>
+    </TableLayout>
 
 </ScrollView>

@@ -5,7 +5,6 @@ android:layout_height="fill_parent"
 style="@style/beigeBackground" >
 
 	<TableLayout
-	    xmlns:android="http://schemas.android.com/apk/res/android"
 	    android:layout_width="fill_parent"
 	    android:layout_height="27dp">
 
@@ -37,10 +36,8 @@ style="@style/beigeBackground" >
 		
 	    <TextView
 	        android:id="@+id/thread1"
-	        android:gravity="center"
-	        android:padding="15dip"
 	        android:text="@string/thread1"
-	        style="@style/roseBackground" />
+	        style="@style/textViewThreads" />
 	   
 	    <View
 			android:layout_height="2dip"
@@ -48,20 +45,16 @@ style="@style/beigeBackground" >
 
 	    <TextView
 	        android:layout_weight="1.14"
-	        android:gravity="center"
-	        android:padding="15dip"
 	        android:text="@string/thread2" 
-	        style="@style/roseBackground" />
+	        style="@style/textViewThreads" />
 	    
 	    <View
 			android:layout_height="2dip"
 			style="@style/separation" />
 
 	    <TextView
-	        android:gravity="center"
-	        android:padding="15dip"
 	        android:text="@string/thread3"
-	        style="@style/roseBackground" />
+	        style="@style/textViewThreads" />
 	    
 	    <View
 			android:layout_height="2dip"
@@ -69,10 +62,8 @@ style="@style/beigeBackground" >
 	    
 	    <TextView
 	        android:layout_weight="1.14"
-	        android:gravity="center"
-	        android:padding="15dip"
 	        android:text="@string/thread4"
-	        style="@style/roseBackground" />
+	        style="@style/textViewThreads" />
 	    
 	    <View
 			android:layout_height="2dip"
@@ -80,10 +71,8 @@ style="@style/beigeBackground" >
 	    
 	    <TextView
 	        android:layout_weight="1.14"
-	        android:gravity="center"
-	        android:padding="15dip"
 	        android:text="@string/thread5"
-	        style="@style/roseBackground" />
+	        style="@style/textViewThreads" />
 	    
 	    <View
 			android:layout_height="2dip"
@@ -91,10 +80,8 @@ style="@style/beigeBackground" >
 	    
 	    <TextView
 	        android:layout_weight="1.14"
-	        android:gravity="center"
-	        android:padding="15dip"
 	        android:text="@string/thread6"
-	        style="@style/roseBackground" />
+	        style="@style/textViewThreads" />
 	    
 	    <View
 			android:layout_height="2dip"
@@ -102,10 +89,8 @@ style="@style/beigeBackground" >
 	    
 	    <TextView
 	        android:layout_weight="1.14"
-	        android:gravity="center"
-	        android:padding="15dip"
 	        android:text="@string/thread7"
-	        style="@style/roseBackground" />
+	        style="@style/textViewThreads" />
 	    
 	    <View
 			android:layout_height="2dip"
