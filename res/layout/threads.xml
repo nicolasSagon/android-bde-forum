@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="fill_parent"
+android:layout_height="fill_parent"
+style="@style/beigeBackground" >
+
+	<TableLayout
+	    android:layout_width="fill_parent"
+	    android:layout_height="27dp">
+
+		<TableRow
+		    android:gravity="center">
+		    
+		    <Button
+	        	android:id="@+id/page1"
+	        	android:layout_height="wrap_content"
+	        	android:text="@string/firstpage" />
+		    
+		    <TextView
+			    android:id="@+id/page"
+			    android:layout_height="wrap_content"
+		        android:text="@string/page" 
+		        />
+
+		    <Button
+		        android:id="@+id/page2"
+		        android:layout_height="wrap_content"
+		        android:text="@string/lastpage"/>
+		
+		</TableRow>
+		
+		<View
+			android:layout_height="2dip"
+			style="@style/separation"
+			android:layout_marginTop="20dip" />
+		
+	    <TextView
+	        android:id="@+id/thread1"
+	        android:text="@string/thread1"
+	        style="@style/textViewThreads" />
+	   
+	    <View
+			android:layout_height="2dip"
+			style="@style/separation" />
+
+	    <TextView
+	        android:layout_weight="1.14"
+	        android:text="@string/thread2" 
+	        style="@style/textViewThreads" />
+	    
+	    <View
+			android:layout_height="2dip"
+			style="@style/separation" />
+
+	    <TextView
+	        android:text="@string/thread3"
+	        style="@style/textViewThreads" />
+	    
+	    <View
+			android:layout_height="2dip"
+			style="@style/separation" />
+	    
+	    <TextView
+	        android:layout_weight="1.14"
+	        android:text="@string/thread4"
+	        style="@style/textViewThreads" />
+	    
+	    <View
+			android:layout_height="2dip"
+			style="@style/separation" />
+	    
+	    <TextView
+	        android:layout_weight="1.14"
+	        android:text="@string/thread5"
+	        style="@style/textViewThreads" />
+	    
+	    <View
+			android:layout_height="2dip"
+			style="@style/separation" />
+	    
+	    <TextView
+	        android:layout_weight="1.14"
+	        android:text="@string/thread6"
+	        style="@style/textViewThreads" />
+	    
+	    <View
+			android:layout_height="2dip"
+			style="@style/separation" />
+	    
+	    <TextView
+	        android:layout_weight="1.14"
+	        android:text="@string/thread7"
+	        style="@style/textViewThreads" />
+	    
+	    <View
+			android:layout_height="2dip"
+			style="@style/separation" />
+	    
+	    <Button
+			android:id="@+id/nouveau"
+			android:layout_height="wrap_content"
+			android:text="@string/nouveau"
+			android:layout_marginTop="20dip"/>
+	    	
+		<TableRow
+			android:gravity="center"
+			android:layout_marginTop="20dip" >
+			    
+			<Button
+		        android:layout_height="wrap_content"
+		        android:text="@string/firstpage" />
+			    
+			<TextView
+				android:layout_height="wrap_content"
+			    android:text="@string/page" 
+				/>
+
+			<Button
+				android:layout_height="wrap_content"
+		    	android:text="@string/lastpage"/>
+		
+		</TableRow>
+	    
+	</TableLayout>
+
+
+</ScrollView>

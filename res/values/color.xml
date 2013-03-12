@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="background">#E2DDC3</color>
+    <color name="threads">#E9CC97</color>
+    <color name="separation">#FF909090</color>
+    <color name="black">#000000</color>
+</resources>
