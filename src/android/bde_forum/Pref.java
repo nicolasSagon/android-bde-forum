@@ -2,7 +2,6 @@ package android.bde_forum;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -10,12 +9,12 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 
-public class Posts extends Activity {
+public class Pref extends Activity {
 
 	public void onCreate(Bundle savedInstanceState) // A la creation de la vue
 	{
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.posts);
+		setContentView(R.layout.settings);
 
 	}
 
@@ -41,8 +40,6 @@ public class Posts extends Activity {
 		switch (item.getItemId()) {
 
 		case R.id.option:
-			Intent intent = new Intent(this, Pref.class);
-			startActivityForResult(intent, 5);
 			return true;
 
 		case R.id.about:

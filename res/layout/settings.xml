@@ -2,8 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     style="@style/beigeBackground"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:scrollbars="vertical" >
+    android:layout_height="fill_parent">
 
     <TableLayout
         android:layout_width="fill_parent"
@@ -54,20 +53,6 @@
             style="@style/separation"
             android:layout_height="2dip" />
 
-        <TextView
-            android:id="@+id/logout"
-            style="@style/textViewSettings"
-            android:text="@string/logout" />
-
-        <View
-            style="@style/separation"
-            android:layout_height="2dip" />
-
-        <TextView
-            android:id="@+id/about"
-            style="@style/textViewSettings"
-            android:layout_height="53dp"
-            android:text="@string/about" />
     </TableLayout>
 
 </ScrollView>

@@ -55,5 +55,12 @@
     <string name="about">A propos</string>
     <string name="myAccount">Mon Compte</string>
     <string name="favorites">Favoris</string>
+    <string name="deleteData">Effacer données App</string>
+    <string name="notification">Activer les notifications</string>
+    <string name="aboutContent1">BdeForum App</string>
+    <string name="aboutContent2">Développée par Bastien Gounon, Melvin Masdieu, Nicolas Sagon et Benjamin Grenier</string>
+    <string name="aboutContent3">Version 1.0</string>
+    
+   
 	
 </resources>
