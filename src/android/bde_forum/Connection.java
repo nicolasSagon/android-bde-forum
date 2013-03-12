@@ -2,18 +2,18 @@ package android.bde_forum;
 
 import java.io.*;
 
-public class connection implements Serializable {
+public class Connection implements Serializable {
 
 	private String pass = null;
 	private String name = null;
 	private boolean enregistrer = false;
 
-	public connection() {
+	public Connection() {
 		pass = null;
 		name = null;
 	}
 
-	public connection(String pseudo, String mdp, boolean save) {
+	public Connection(String pseudo, String mdp, boolean save) {
 		setName(pseudo);
 		setPass(mdp);
 		setEnregistrer(save);
