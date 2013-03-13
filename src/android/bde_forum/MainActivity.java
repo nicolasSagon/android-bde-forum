@@ -56,7 +56,7 @@ public class MainActivity extends Activity {
 		// en un objet Menu
 		MenuInflater inflater = getMenuInflater();
 		// Instanciation du menu XML spécifier en un objet Menu
-		inflater.inflate(R.layout.menu, menu);
+		inflater.inflate(R.layout.menumain, menu);
 
 		// Il n'est pas possible de modifier l'icône d'entête du sous-menu via
 		// le fichier XML on le fait donc en JAVA
@@ -86,6 +86,7 @@ public class MainActivity extends Activity {
 
 			// On affecte la vue personnalisé que l'on a crée à notre
 			// AlertDialog
+
 			adb.setView(alertDialogView);
 
 			// On donne un titre à l'AlertDialog
@@ -95,7 +96,7 @@ public class MainActivity extends Activity {
 			return true;
 
 		case R.id.deconnexion:
-			//attente de la fonction de déconnection
+			finish();
 			return true;
 		}
 		return false;

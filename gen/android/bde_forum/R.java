@@ -30,39 +30,39 @@ public final class R {
         public static final int aboutContent1=0x7f070000;
         public static final int aboutContent2=0x7f070001;
         public static final int aboutContent3=0x7f070002;
-        public static final int auteur=0x7f070014;
-        public static final int auteur2=0x7f070016;
-        public static final int auteur3=0x7f070018;
-        public static final int auteur4=0x7f07001a;
-        public static final int auteur5=0x7f07001c;
+        public static final int account=0x7f070014;
+        public static final int auteur=0x7f070017;
+        public static final int auteur2=0x7f070019;
+        public static final int auteur3=0x7f07001b;
+        public static final int auteur4=0x7f07001d;
+        public static final int auteur5=0x7f07001f;
         public static final int categorie5=0x7f070006;
         public static final int connection=0x7f07000d;
-        public static final int createAccount=0x7f070024;
         public static final int deconnexion=0x7f070010;
-        public static final int deleteData=0x7f070012;
-        public static final int favoris=0x7f070023;
+        public static final int editSearch=0x7f070024;
+        public static final int favoris=0x7f070013;
         public static final int gallery1=0x7f070009;
-        public static final int message=0x7f070020;
-        public static final int notification=0x7f070011;
+        public static final int message=0x7f070011;
+        public static final int notification=0x7f070015;
         public static final int nouveau=0x7f070027;
         public static final int option=0x7f07000e;
         public static final int page=0x7f070004;
         public static final int page1=0x7f070025;
         public static final int page2=0x7f070005;
-        public static final int parameters=0x7f070022;
         public static final int password=0x7f07000b;
-        public static final int post1=0x7f070015;
-        public static final int post2=0x7f070017;
-        public static final int post3=0x7f070019;
-        public static final int post4=0x7f07001b;
-        public static final int post5=0x7f07001d;
-        public static final int repondre=0x7f07001f;
-        public static final int reponse=0x7f07001e;
-        public static final int search=0x7f070021;
+        public static final int post1=0x7f070018;
+        public static final int post2=0x7f07001a;
+        public static final int post3=0x7f07001c;
+        public static final int post4=0x7f07001e;
+        public static final int post5=0x7f070020;
+        public static final int repondre=0x7f070022;
+        public static final int reponse=0x7f070021;
+        public static final int search=0x7f070012;
         public static final int stayConnected=0x7f07000c;
         public static final int test1=0x7f070003;
         public static final int thread1=0x7f070026;
-        public static final int titre=0x7f070013;
+        public static final int titleSearch=0x7f070023;
+        public static final int titre=0x7f070016;
         public static final int topic1=0x7f070007;
         public static final int topic2=0x7f070008;
     }
@@ -71,10 +71,11 @@ public final class R {
         public static final int categorie=0x7f030001;
         public static final int login=0x7f030002;
         public static final int menu=0x7f030003;
-        public static final int parameters=0x7f030004;
-        public static final int posts=0x7f030005;
-        public static final int settings=0x7f030006;
-        public static final int threads=0x7f030007;
+        public static final int menumain=0x7f030004;
+        public static final int options=0x7f030005;
+        public static final int posts=0x7f030006;
+        public static final int search=0x7f030007;
+        public static final int threads=0x7f030008;
     }
     public static final class string {
         public static final int Sconnect=0x7f050006;
@@ -85,6 +86,7 @@ public final class R {
         public static final int app_name=0x7f050000;
         public static final int auteur=0x7f050019;
         public static final int avatar=0x7f050018;
+        public static final int buttonSearch=0x7f050032;
         /**  String pour les catégories 
          */
         public static final int categorie1=0x7f05001c;
@@ -94,6 +96,7 @@ public final class R {
         public static final int categorie5=0x7f05001f;
         public static final int connect=0x7f050007;
         public static final int deleteData=0x7f05002b;
+        public static final int editSearch=0x7f050031;
         public static final int favorites=0x7f05002a;
         /**  Strings pour la page des threads 
          */
@@ -130,6 +133,7 @@ public final class R {
         public static final int thread5=0x7f05000f;
         public static final int thread6=0x7f050010;
         public static final int thread7=0x7f050011;
+        public static final int titleSearch=0x7f050030;
         /**  String pour la page settings 
          */
         public static final int title_activity_settings=0x7f050023;
