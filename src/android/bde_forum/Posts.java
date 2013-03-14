@@ -19,6 +19,19 @@ public class Posts extends Activity {
 
 	}
 
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		// on récupère le statut de retour de l'activité 3 c'est à dire
+		// l'activité numéro 4
+		if (requestCode == 5) {
+			// si le code de retry est égal à 1 on stoppe l'activité 2
+			if (resultCode == 1) {
+				setResult(1);
+				finish();
+			}
+		}
+		super.onActivityResult(requestCode, resultCode, data);
+	}
+
 	public boolean onCreateOptionsMenu(Menu menu) {
 
 		// Création d'un MenuInflater qui va permettre d'instancier un Menu XML

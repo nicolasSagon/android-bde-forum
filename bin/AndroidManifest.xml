@@ -20,12 +20,11 @@
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-                <action android:name="android.bde_forum.AppWidget.action.OPEN_TUTO" />
             </intent-filter>
 
             <meta-data
                 android:name="android.appwidget.provider"
-                android:resource="@xml/appwidgetproviderinfo" />
+                android:resource="@xml/provider" />
         </receiver>
         <activity
             android:name="android.bde_forum.MainActivity"
@@ -48,6 +47,8 @@
             android:name="android.bde_forum.Posts"/>
         <activity
             android:name="android.bde_forum.Pref"/>
+        <activity
+            android:name="android.bde_forum.Search"/>
     </application>
 
 </manifest>

@@ -36,8 +36,8 @@ public class Threads extends Activity {
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		// on récupère le statut de retour de l'activité 3 c'est à dire
 		// l'activité numéro 4
-		if (requestCode == 4) {
-			// si le code de retour est égal à 1 on stoppe l'activité 2
+		if (requestCode == 4 || requestCode == 5) {
+			// si le code de retry est égal à 1 on stoppe l'activité 2
 			if (resultCode == 1) {
 				setResult(1);
 				finish();

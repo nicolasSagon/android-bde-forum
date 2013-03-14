@@ -9,54 +9,22 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
 
-public class MainActivity extends Activity {
-
-	private Button connect = null;
-	private TextView text = null;
-	private EditText pseudo = null;
-	private EditText pass = null;
-
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-
+public class Search extends Activity {
+	
+	public void onCreate(Bundle savedInstanceState) // A la creation de la vue
+	{
 		super.onCreate(savedInstanceState);
-
-		setContentView(R.layout.login);
-
-		connect = (Button) findViewById(R.id.connection);
-
-		connect.setOnClickListener(new View.OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-
-				pseudo = (EditText) findViewById(R.id.Login);
-				String ps = pseudo.getText().toString();
-				pass = (EditText) findViewById(R.id.password);
-				String pa = pass.getText().toString();
-				// Si la connexion est bonne
-				Intent intent = new Intent(MainActivity.this, Categorie.class);
-				startActivity(intent);
-
-			}
-
-		});
+		setContentView(R.layout.search);
 	}
-
-	// Méthode qui se déclenchera lorsque vous appuierez sur le bouton menu du
-	// téléphone
+	
 	public boolean onCreateOptionsMenu(Menu menu) {
 
 		// Création d'un MenuInflater qui va permettre d'instancier un Menu XML
 		// en un objet Menu
 		MenuInflater inflater = getMenuInflater();
 		// Instanciation du menu XML spécifier en un objet Menu
-		inflater.inflate(R.layout.menumain, menu);
+		inflater.inflate(R.layout.menu, menu);
 
 		// Il n'est pas possible de modifier l'icône d'entête du sous-menu via
 		// le fichier XML on le fait donc en JAVA
@@ -70,11 +38,10 @@ public class MainActivity extends Activity {
 		// On regarde quel item a été cliqué grâce à son id et on déclenche une
 		// action
 		switch (item.getItemId()) {
-		case R.id.option:
 
+		case R.id.option:
 			Intent intent = new Intent(this, Pref.class);
 			startActivityForResult(intent, 5);
-
 			return true;
 
 		case R.id.about:
@@ -86,7 +53,6 @@ public class MainActivity extends Activity {
 
 			// On affecte la vue personnalisé que l'on a crée à notre
 			// AlertDialog
-
 			adb.setView(alertDialogView);
 
 			// On donne un titre à l'AlertDialog
@@ -96,9 +62,12 @@ public class MainActivity extends Activity {
 			return true;
 
 		case R.id.deconnexion:
+			setResult(1);
 			finish();
+
 			return true;
 		}
 		return false;
 	}
+
 }
