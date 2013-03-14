@@ -9,6 +9,7 @@ import android.net.Uri;
 import android.widget.RemoteViews;
 
 public class AppWidget extends AppWidgetProvider {
+	
 
 	private MessagePrive messageArray[] = {
 			new MessagePrive("melvin", "Salut comment vas tu ?"),
