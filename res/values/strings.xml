@@ -59,6 +59,9 @@
     <string name="aboutContent1">BdeForum App</string>
     <string name="aboutContent2">Développée par Bastien Gounon, Melvin Masdieu, Nicolas Sagon et Benjamin Grenier</string>
     <string name="aboutContent3">Version 1.0</string>
+    <string name="titleSearch">Saisissez le sujet de votre recherche:</string>
+    <string name="editSearch">search</string>
+    <string name="buttonSearch">Rechercher</string>
 
     <!-- String pour l'appWidget -->
     <string name="mpWidget">message prive numero 1</string>
