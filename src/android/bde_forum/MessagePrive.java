@@ -29,7 +29,7 @@ public class MessagePrive {
 	}
 	
 	public String getMessageComplet(){
-		return (auteur + "\n\t" + message);
+		return (auteur + "\n\n\t\t" + message);
 	}
 	
 }
