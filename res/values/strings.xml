@@ -65,8 +65,6 @@
 
     <!-- String pour l'appWidget -->
     <string name="mpWidget">message prive numero 1</string>
-    <string name="repWidget">Ecrivez votre message içi</string>
-    <string name="boutonWidget">envoyer</string>
     <string name="precedentWi">Précédent</string>
     <string name="suivantWi">Suivant</string>
 

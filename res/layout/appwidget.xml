@@ -1,51 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout 
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     style="@style/beigeBackground"
     android:layout_width="fill_parent"
-    android:layout_height="220dip"
-    android:gravity="center"
-    android:orientation="vertical" xmlns:android="http://schemas.android.com/apk/res/android">
+   		 android:orientation="vertical"
+   		 android:layout_gravity="center"
+   		 android:layout_height="wrap_content" >
 
     <TextView
         android:id="@+id/mpWidget"
         android:layout_width="fill_parent"
-        android:layout_height="72dip"
-        android:gravity="center"
+        android:layout_height="108dip"
         android:text="@string/mpWidget"
         android:textColor="@color/black" />
 
-    <EditText
-        android:id="@+id/repWidget"
-        android:layout_width="fill_parent"
-        android:layout_height="72dip"
-        android:layout_below="@id/mpWidget"
-        android:gravity="center"
-        android:hint="@string/repWidget" />
-
-    <Button
-        android:id="@+id/boutonW"
+    <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="36dip"
-        android:layout_below="@id/repWidget"
-        android:gravity="center"
-        android:text="@string/boutonWidget" />
+        android:orientation="horizontal" >
 
-    <TextView 
-        android:id="@+id/precedentW"
-	    android:layout_width="72dip"
-        android:layout_height="36dip"
-        android:layout_below="@id/boutonW"
-        android:textColor="@color/black"
-        android:layout_alignParentLeft="true"
-        android:text="@string/precedentWi"/>
+        <Button
+            android:id="@+id/precedentW"
+            android:layout_width="90dip"
+            android:layout_height="36dip"
+            android:text="@string/precedentWi"
+            android:textColor="@color/black" />
+        
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="36dip" />
 
-	<TextView
-	    android:id="@+id/suivantW"
-	    android:layout_width="72dip"
-        android:layout_height="36dip"
-        android:layout_below="@id/boutonW"
-        android:textColor="@color/black"
-        android:layout_alignParentRight="true"
-	    android:text="@string/suivantWi" />
+        <Button
+            android:id="@+id/suivantW"
+            android:layout_width="90dip"
+            android:layout_height="36dip"
+            android:text="@string/suivantWi"
+            android:textColor="@color/black" />
 
-</RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

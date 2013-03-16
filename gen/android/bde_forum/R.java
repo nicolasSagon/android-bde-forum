@@ -25,51 +25,49 @@ public final class R {
         public static final int settings=0x7f020005;
     }
     public static final class id {
-        public static final int Login=0x7f08000f;
-        public static final int about=0x7f080014;
+        public static final int Login=0x7f08000d;
+        public static final int about=0x7f080012;
         public static final int aboutContent1=0x7f080000;
         public static final int aboutContent2=0x7f080001;
         public static final int aboutContent3=0x7f080002;
-        public static final int account=0x7f080019;
-        public static final int auteur=0x7f08001c;
-        public static final int auteur2=0x7f08001e;
-        public static final int auteur3=0x7f080020;
-        public static final int auteur4=0x7f080022;
-        public static final int auteur5=0x7f080024;
-        public static final int boutonW=0x7f080005;
-        public static final int categorie5=0x7f08000b;
-        public static final int connection=0x7f080012;
-        public static final int deconnexion=0x7f080015;
-        public static final int editSearch=0x7f080029;
-        public static final int favoris=0x7f080018;
-        public static final int gallery1=0x7f08000e;
-        public static final int message=0x7f080016;
+        public static final int account=0x7f080017;
+        public static final int auteur=0x7f08001a;
+        public static final int auteur2=0x7f08001c;
+        public static final int auteur3=0x7f08001e;
+        public static final int auteur4=0x7f080020;
+        public static final int auteur5=0x7f080022;
+        public static final int categorie5=0x7f080009;
+        public static final int connection=0x7f080010;
+        public static final int deconnexion=0x7f080013;
+        public static final int editSearch=0x7f080027;
+        public static final int favoris=0x7f080016;
+        public static final int gallery1=0x7f08000c;
+        public static final int message=0x7f080014;
         public static final int mpWidget=0x7f080003;
-        public static final int notification=0x7f08001a;
-        public static final int nouveau=0x7f08002c;
-        public static final int option=0x7f080013;
-        public static final int page=0x7f080009;
-        public static final int page1=0x7f08002a;
-        public static final int page2=0x7f08000a;
-        public static final int password=0x7f080010;
-        public static final int post1=0x7f08001d;
-        public static final int post2=0x7f08001f;
-        public static final int post3=0x7f080021;
-        public static final int post4=0x7f080023;
-        public static final int post5=0x7f080025;
-        public static final int precedentW=0x7f080006;
-        public static final int repWidget=0x7f080004;
-        public static final int repondre=0x7f080027;
-        public static final int reponse=0x7f080026;
-        public static final int search=0x7f080017;
-        public static final int stayConnected=0x7f080011;
-        public static final int suivantW=0x7f080007;
-        public static final int test1=0x7f080008;
-        public static final int thread1=0x7f08002b;
-        public static final int titleSearch=0x7f080028;
-        public static final int titre=0x7f08001b;
-        public static final int topic1=0x7f08000c;
-        public static final int topic2=0x7f08000d;
+        public static final int notification=0x7f080018;
+        public static final int nouveau=0x7f08002a;
+        public static final int option=0x7f080011;
+        public static final int page=0x7f080007;
+        public static final int page1=0x7f080028;
+        public static final int page2=0x7f080008;
+        public static final int password=0x7f08000e;
+        public static final int post1=0x7f08001b;
+        public static final int post2=0x7f08001d;
+        public static final int post3=0x7f08001f;
+        public static final int post4=0x7f080021;
+        public static final int post5=0x7f080023;
+        public static final int precedentW=0x7f080004;
+        public static final int repondre=0x7f080025;
+        public static final int reponse=0x7f080024;
+        public static final int search=0x7f080015;
+        public static final int stayConnected=0x7f08000f;
+        public static final int suivantW=0x7f080005;
+        public static final int test1=0x7f080006;
+        public static final int thread1=0x7f080029;
+        public static final int titleSearch=0x7f080026;
+        public static final int titre=0x7f080019;
+        public static final int topic1=0x7f08000a;
+        public static final int topic2=0x7f08000b;
     }
     public static final class layout {
         public static final int about=0x7f030000;
@@ -92,7 +90,6 @@ public final class R {
         public static final int app_name=0x7f060000;
         public static final int auteur=0x7f060019;
         public static final int avatar=0x7f060018;
-        public static final int boutonWidget=0x7f060035;
         public static final int buttonSearch=0x7f060032;
         /**  String pour les catégories 
          */
@@ -129,16 +126,15 @@ public final class R {
         public static final int post3=0x7f060015;
         public static final int post4=0x7f060016;
         public static final int post5=0x7f060017;
-        public static final int precedentWi=0x7f060036;
+        public static final int precedentWi=0x7f060034;
         /**  Strings pour la page Login 
          */
         public static final int pseudo=0x7f060002;
         public static final int pseudo2=0x7f060003;
-        public static final int repWidget=0x7f060034;
         public static final int repondre=0x7f06001a;
         public static final int reponse=0x7f06001b;
         public static final int search=0x7f060025;
-        public static final int suivantWi=0x7f060037;
+        public static final int suivantWi=0x7f060035;
         public static final int thread1=0x7f06000b;
         public static final int thread2=0x7f06000c;
         public static final int thread3=0x7f06000d;
