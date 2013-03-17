@@ -47,6 +47,8 @@
             android:name="android.bde_forum.Pref"/>
         <activity
             android:name="android.bde_forum.Search"/>
+        <activity
+            android:name="android.bde_forum.Chatbox"/>
     </application>
 
 </manifest>

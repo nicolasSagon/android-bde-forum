@@ -45,6 +45,15 @@
         <View
             style="@style/separation"
             android:layout_height="2dip" />
+        
+        <TextView
+            android:id="@+id/chatbox"
+            style="@style/textViewSettings"
+            android:text="@string/chatboxSet" />
+
+        <View
+            style="@style/separation"
+            android:layout_height="2dip" />
 
         <CheckBox
             android:id="@+id/notification"

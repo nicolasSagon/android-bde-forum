@@ -67,5 +67,8 @@
     <string name="mpWidget">message prive numero 1</string>
     <string name="precedentWi">Précédent</string>
     <string name="suivantWi">Suivant</string>
+    <string name="chatmessage">Message</string>
+    <string name="envoimessage">Envoyer</string>
+    <string name="chatboxSet">Chatbox</string>
 
 </resources>

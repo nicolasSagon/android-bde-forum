@@ -15,6 +15,7 @@ public final class R {
         public static final int black=0x7f050003;
         public static final int separation=0x7f050002;
         public static final int threads=0x7f050001;
+        public static final int white=0x7f050004;
     }
     public static final class drawable {
         public static final int about=0x7f020000;
@@ -25,47 +26,51 @@ public final class R {
         public static final int settings=0x7f020005;
     }
     public static final class id {
-        public static final int Login=0x7f08000d;
-        public static final int about=0x7f080012;
+        public static final int Login=0x7f080010;
+        public static final int about=0x7f080015;
         public static final int aboutContent1=0x7f080000;
         public static final int aboutContent2=0x7f080001;
         public static final int aboutContent3=0x7f080002;
-        public static final int account=0x7f080017;
-        public static final int auteur=0x7f08001a;
-        public static final int auteur2=0x7f08001c;
-        public static final int auteur3=0x7f08001e;
-        public static final int auteur4=0x7f080020;
-        public static final int auteur5=0x7f080022;
+        public static final int account=0x7f08001a;
+        public static final int auteur=0x7f08001e;
+        public static final int auteur2=0x7f080020;
+        public static final int auteur3=0x7f080022;
+        public static final int auteur4=0x7f080024;
+        public static final int auteur5=0x7f080026;
         public static final int categorie5=0x7f080009;
-        public static final int connection=0x7f080010;
-        public static final int deconnexion=0x7f080013;
-        public static final int editSearch=0x7f080027;
-        public static final int favoris=0x7f080016;
-        public static final int gallery1=0x7f08000c;
-        public static final int message=0x7f080014;
+        public static final int chatbox=0x7f08001b;
+        public static final int chatmessage=0x7f08000d;
+        public static final int connection=0x7f080013;
+        public static final int deconnexion=0x7f080016;
+        public static final int discussion=0x7f08000c;
+        public static final int editSearch=0x7f08002b;
+        public static final int envoimessage=0x7f08000e;
+        public static final int favoris=0x7f080019;
+        public static final int gallery1=0x7f08000f;
+        public static final int message=0x7f080017;
         public static final int mpWidget=0x7f080003;
-        public static final int notification=0x7f080018;
-        public static final int nouveau=0x7f08002a;
-        public static final int option=0x7f080011;
+        public static final int notification=0x7f08001c;
+        public static final int nouveau=0x7f08002e;
+        public static final int option=0x7f080014;
         public static final int page=0x7f080007;
-        public static final int page1=0x7f080028;
+        public static final int page1=0x7f08002c;
         public static final int page2=0x7f080008;
-        public static final int password=0x7f08000e;
-        public static final int post1=0x7f08001b;
-        public static final int post2=0x7f08001d;
-        public static final int post3=0x7f08001f;
-        public static final int post4=0x7f080021;
-        public static final int post5=0x7f080023;
+        public static final int password=0x7f080011;
+        public static final int post1=0x7f08001f;
+        public static final int post2=0x7f080021;
+        public static final int post3=0x7f080023;
+        public static final int post4=0x7f080025;
+        public static final int post5=0x7f080027;
         public static final int precedentW=0x7f080004;
-        public static final int repondre=0x7f080025;
-        public static final int reponse=0x7f080024;
-        public static final int search=0x7f080015;
-        public static final int stayConnected=0x7f08000f;
+        public static final int repondre=0x7f080029;
+        public static final int reponse=0x7f080028;
+        public static final int search=0x7f080018;
+        public static final int stayConnected=0x7f080012;
         public static final int suivantW=0x7f080005;
         public static final int test1=0x7f080006;
-        public static final int thread1=0x7f080029;
-        public static final int titleSearch=0x7f080026;
-        public static final int titre=0x7f080019;
+        public static final int thread1=0x7f08002d;
+        public static final int titleSearch=0x7f08002a;
+        public static final int titre=0x7f08001d;
         public static final int topic1=0x7f08000a;
         public static final int topic2=0x7f08000b;
     }
@@ -73,13 +78,14 @@ public final class R {
         public static final int about=0x7f030000;
         public static final int appwidget=0x7f030001;
         public static final int categorie=0x7f030002;
-        public static final int login=0x7f030003;
-        public static final int menu=0x7f030004;
-        public static final int menumain=0x7f030005;
-        public static final int options=0x7f030006;
-        public static final int posts=0x7f030007;
-        public static final int search=0x7f030008;
-        public static final int threads=0x7f030009;
+        public static final int chatbox=0x7f030003;
+        public static final int login=0x7f030004;
+        public static final int menu=0x7f030005;
+        public static final int menumain=0x7f030006;
+        public static final int options=0x7f030007;
+        public static final int posts=0x7f030008;
+        public static final int search=0x7f030009;
+        public static final int threads=0x7f03000a;
     }
     public static final class string {
         public static final int Sconnect=0x7f060006;
@@ -98,9 +104,12 @@ public final class R {
         public static final int categorie3=0x7f06001e;
         public static final int categorie4=0x7f060020;
         public static final int categorie5=0x7f06001f;
+        public static final int chatboxSet=0x7f060038;
+        public static final int chatmessage=0x7f060036;
         public static final int connect=0x7f060007;
         public static final int deleteData=0x7f06002b;
         public static final int editSearch=0x7f060031;
+        public static final int envoimessage=0x7f060037;
         public static final int favorites=0x7f06002a;
         /**  Strings pour la page des threads 
          */
@@ -154,6 +163,9 @@ public final class R {
         public static final int blackText=0x7f070003;
         public static final int roseBackground=0x7f070001;
         public static final int separation=0x7f070002;
+        /**  STYLE DE LA DISCUSSION 
+         */
+        public static final int textViewChatbox=0x7f070007;
         /**  STYLE DES TEXTVIEW DE LA PAGE POSTS 
          */
         public static final int textViewPosts=0x7f070004;

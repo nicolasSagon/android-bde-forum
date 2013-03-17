@@ -17,6 +17,7 @@ public class Pref extends Activity {
 	private TextView textSearch;
 	private TextView textFav;
 	private TextView textCompte;
+	private TextView textChatbox;
 
 	public void onCreate(Bundle savedInstanceState) // A la creation de la vue
 	{
@@ -27,6 +28,7 @@ public class Pref extends Activity {
 		textSearch = (TextView) findViewById(R.id.search);
 		textFav = (TextView) findViewById(R.id.favoris);
 		textCompte = (TextView) findViewById(R.id.account);
+		textChatbox = (TextView) findViewById(R.id.chatbox);
 
 		// listener pour le textView des recherches
 		textSearch.setOnClickListener(new View.OnClickListener() {
@@ -39,6 +41,18 @@ public class Pref extends Activity {
 				startActivityForResult(intent, 6);
 			}
 		});
+		
+		// listener pour le textView de la chatbox
+				textChatbox.setOnClickListener(new View.OnClickListener() {
+
+					@Override
+					public void onClick(View v) {
+
+					
+						Intent intent = new Intent(Pref.this, Chatbox.class);
+						startActivityForResult(intent, 7);
+					}
+				});
 
 	}
 
