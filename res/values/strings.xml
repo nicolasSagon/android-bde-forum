@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">BDE-FORUM</string>
+    <string name="menu_settings">Settings</string>
+
+    <!-- Strings pour la page Login -->
+    <string name="pseudo">Pseudo : </string>
+    <string name="pseudo2">Pseudo</string>
+    <string name="mdp">Mot de Passe : </string>
+    <string name="mdp2">Mot de Passe</string>
+    <string name="Sconnect">Restez connecté</string>
+    <string name="connect">Connexion</string>
+
+    <!-- Strings pour la page des threads -->
+    <string name="firstpage">1</string>
+    <string name="page"></string>
+    <string name="lastpage">2</string>
+    <string name="thread1">thread 1</string>
+    <string name="thread2">thread 2</string>
+    <string name="thread3">thread 3</string>
+    <string name="thread4">thread 4</string>
+    <string name="thread5">thread 5</string>
+    <string name="thread6">thread 6</string>
+    <string name="thread7">thread 7</string>
+    <string name="nouveau">Nouveau thread</string>
+
+    <!-- Strings pour les posts -->
+    <string name="post1">texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttextttexttextttextttextttextttexttext</string>
+    <string name="post2">texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttextttexttextttextttextttextttexttext</string>
+    <string name="post3">texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttextttexttextttextttextttextttexttext</string>
+    <string name="post4">texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttextttexttextttextttextttextttexttext</string>
+    <string name="post5">texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttextttexttextttextttextttextttexttext</string>
+    <string name="avatar">avatar</string>
+    <string name="auteur">auteur a écrit :</string>
+    <string name="repondre">Envoyer</string>
+    <string name="reponse">Répondre</string>
+
+    <!-- String pour les catégories -->
+    <string name="categorie1">categorie1</string>
+    <string name="categorie2">categorie2</string>
+    <string name="categorie3">categorie3</string>
+    <string name="categorie5">categorie5</string>
+    <string name="categorie4">categorie4</string>
+    <string name="topic1">topic1</string>
+    <string name="topic2">topic2</string>
+
+    <!-- String pour la page settings -->
+    <string name="title_activity_settings">SettingsActivity</string>
+    <string name="message">Boite de réception</string>
+    <string name="search">Rechercher</string>
+    <string name="parameters">Paramètres</string>
+    <string name="logout">Déconnexion</string>
+    <string name="about">A propos</string>
+    <string name="myAccount">Mon Compte</string>
+    <string name="favorites">Favoris</string>
+    <string name="deleteData">Effacer données App</string>
+    <string name="notification">Activer les notifications</string>
+    <string name="aboutContent1">BdeForum App</string>
+    <string name="aboutContent2">Développée par Bastien Gounon, Melvin Masdieu, Nicolas Sagon et Benjamin Grenier</string>
+    <string name="aboutContent3">Version 1.0</string>
+    <string name="titleSearch">Saisissez le sujet de votre recherche:</string>
+    <string name="editSearch">search</string>
+    <string name="buttonSearch">Rechercher</string>
+
+    <!-- String pour l'appWidget -->
+    <string name="mpWidget">message prive numero 1</string>
+    <string name="precedentWi">Précédent</string>
+    <string name="suivantWi">Suivant</string>
+    <string name="chatmessage">Message</string>
+    <string name="envoimessage">Envoyer</string>
+    <string name="chatboxSet">Chatbox</string>
+
+</resources>
