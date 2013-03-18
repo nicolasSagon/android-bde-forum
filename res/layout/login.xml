@@ -28,7 +28,8 @@
             android:id="@+id/Login"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/pseudo2" />
+            android:hint="@string/pseudo2"
+            android:inputType="textNoSuggestions|none" />
 
         <TextView
             android:layout_width="fill_parent"

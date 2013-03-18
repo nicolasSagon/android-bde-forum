@@ -2,9 +2,9 @@ package android.bde_forum;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -15,6 +15,7 @@ public class Categorie extends Activity {
 	private TextView textCat;
 	private TextView textTopic1;
 	private TextView textTopic2;
+	final Context context = this;
 
 	public void onCreate(Bundle savedInstanceState) // A la creation de la vue
 	{
@@ -90,20 +91,11 @@ public class Categorie extends Activity {
 
 		case R.id.about:
 
-			LayoutInflater factory = LayoutInflater.from(this);
-			final View alertDialogView = factory.inflate(R.layout.about, null);
-
-			// Création de l'AlertDialog
-			AlertDialog.Builder adb = new AlertDialog.Builder(this);
-
-			// On affecte la vue personnalisé que l'on a crée à notre
-			// AlertDialog
-			adb.setView(alertDialogView);
-
-			// On donne un titre à l'AlertDialog
-			adb.setTitle("A propos de BDE FORUM");
-
-			adb.show();
+			AlertDialog.Builder builder = new AlertDialog.Builder(context);
+			builder.setMessage("Développée par Bastien Gounon, Melvin Masdieu, Nicolas Sagon et Benjamin Grenier \n\nVersion 1.0")
+					.setTitle("BDE Forum");
+			AlertDialog dialog = builder.create();
+			dialog.show();
 			return true;
 
 		case R.id.deconnexion:

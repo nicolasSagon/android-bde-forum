@@ -1,32 +1,38 @@
 package android.bde_forum;
 
-import java.awt.*;
-import java.io.*;
-import java.net.*;
-import java.util.*;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.net.Socket;
+import java.net.UnknownHostException;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.text.method.ScrollingMovementMethod;
+import android.util.Log;
+import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.text.method.ScrollingMovementMethod;
-import android.util.Log;
-import android.view.View;
 
 public class Chatbox extends Activity {
 	
 	private Button envoi = null;
 	private EditText newMess = null;
 	private TextView discussion = null;
-
+	
 	private Socket socket;
 
 	private DataOutputStream dout;
 	private DataInputStream din;
 	
+	final Context context = this;
 
 
 	public void onCreate(Bundle savedInstanceState) // A la creation de la vue
@@ -146,5 +152,33 @@ public class Chatbox extends Activity {
 		}
 		
 	};
+	
+	public boolean onOptionsItemSelected(MenuItem item) {
+		// On regarde quel item a été cliqué grâce à son id et on déclenche une
+		// action
+		switch (item.getItemId()) {
+
+		case R.id.option:
+			Intent intent = new Intent(this, Pref.class);
+			startActivityForResult(intent, 5);
+			return true;
+
+		case R.id.about:
+			AlertDialog.Builder builder = new AlertDialog.Builder(context);
+			builder.setMessage("Développée par Bastien Gounon, Melvin Masdieu, Nicolas Sagon et Benjamin Grenier \n\nVersion 1.0")
+					.setTitle("BDE Forum");
+			AlertDialog dialog = builder.create();
+			dialog.show();
+			return true;
+
+		case R.id.deconnexion:
+			setResult(1);
+			finish();
+
+			return true;
+		}
+		return false;
+	}
+
 	
 }

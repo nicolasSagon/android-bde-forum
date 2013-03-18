@@ -2,9 +2,9 @@ package android.bde_forum;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -14,10 +14,9 @@ import android.widget.TextView;
 public class Pref extends Activity {
 
 	private TextView textBR;
-	private TextView textSearch;
-	private TextView textFav;
 	private TextView textCompte;
 	private TextView textChatbox;
+	final Context context = this;
 
 	public void onCreate(Bundle savedInstanceState) // A la creation de la vue
 	{
@@ -25,41 +24,50 @@ public class Pref extends Activity {
 		setContentView(R.layout.options);
 
 		textBR = (TextView) findViewById(R.id.message);
-		textSearch = (TextView) findViewById(R.id.search);
-		textFav = (TextView) findViewById(R.id.favoris);
 		textCompte = (TextView) findViewById(R.id.account);
 		textChatbox = (TextView) findViewById(R.id.chatbox);
 
-		// listener pour le textView des recherches
-		textSearch.setOnClickListener(new View.OnClickListener() {
+		// listener pour chatbox
+
+		textChatbox.setOnClickListener(new View.OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
 
-			
-				Intent intent = new Intent(Pref.this, Search.class);
+				Intent intent = new Intent(Pref.this, Chatbox.class);
+				startActivityForResult(intent, 8);
+			}
+		});
+
+		// listener pour boite recep
+
+		textBR.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+
+				Intent intent = new Intent(Pref.this, BoiteRecep.class);
 				startActivityForResult(intent, 6);
 			}
 		});
-		
-		// listener pour le textView de la chatbox
-				textChatbox.setOnClickListener(new View.OnClickListener() {
 
-					@Override
-					public void onClick(View v) {
+		// listener pour mon compte
+		textCompte.setOnClickListener(new View.OnClickListener() {
 
-					
-						Intent intent = new Intent(Pref.this, Chatbox.class);
-						startActivityForResult(intent, 7);
-					}
-				});
+			@Override
+			public void onClick(View v) {
+
+				Intent intent = new Intent(Pref.this, MonCompte.class);
+				startActivityForResult(intent, 7);
+			}
+		});
 
 	}
 
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		// on récupère le statut de retour de l'activité 3 c'est à dire
 		// l'activité numéro 4
-		if (requestCode == 6) {
+		if (requestCode == 6 || requestCode == 7 || requestCode == 8) {
 			// si le code de retry est égal à 1 on stoppe l'activité 2
 			if (resultCode == 1) {
 				setResult(1);
@@ -96,20 +104,12 @@ public class Pref extends Activity {
 			return true;
 
 		case R.id.about:
-			LayoutInflater factory = LayoutInflater.from(this);
-			final View alertDialogView = factory.inflate(R.layout.about, null);
-
-			// Création de l'AlertDialog
-			AlertDialog.Builder adb = new AlertDialog.Builder(this);
-
-			// On affecte la vue personnalisé que l'on a crée à notre
-			// AlertDialog
-			adb.setView(alertDialogView);
-
-			// On donne un titre à l'AlertDialog
-			adb.setTitle("A propos de BDE FORUM");
-
-			adb.show();
+			AlertDialog.Builder builder = new AlertDialog.Builder(context);
+			builder.setMessage(
+					"Développée par Bastien Gounon, Melvin Masdieu, Nicolas Sagon et Benjamin Grenier \n\nVersion 1.0")
+					.setTitle("BDE Forum");
+			AlertDialog dialog = builder.create();
+			dialog.show();
 			return true;
 
 		case R.id.deconnexion:
