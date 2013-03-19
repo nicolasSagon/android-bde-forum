@@ -53,16 +53,16 @@ public class Categorie extends Activity {
 	}
 
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-		// on rÈcupËre le statut de retour de l'activitÈ 2 c'est ‡ dire
-		// l'activitÈ numÈro 3
+		// on r√©cup√®re le statut de retour de l'activit√© 2 c'est √† dire
+		// l'activit√© num√©ro 3
 		if (requestCode == 3 || requestCode == 5) {
-			// si le code de retour est Ègal ‡ 1 on stoppe l'activitÈ 1
+			// si le code de retour est √©gal √† 1 on stoppe l'activit√© 1
 			if (resultCode == 1) {
 				finish();
 			}
 			if (requestCode == 5) {
 
-				Toast.makeText(this, "Modifications terminÈes",
+				Toast.makeText(this, "Modifications termin√©es",
 						Toast.LENGTH_SHORT).show();
 
 			}
@@ -70,22 +70,22 @@ public class Categorie extends Activity {
 		super.onActivityResult(requestCode, resultCode, data);
 	}
 
-	// MÈthode qui se dÈclenchera lorsque vous appuierez sur le bouton menu du
-	// tÈlÈphone
+	// M√©thode qui se d√©clenchera lorsque vous appuierez sur le bouton menu du
+	// t√©l√©phone
 	public boolean onCreateOptionsMenu(Menu menu) {
 
-		// CrÈation d'un MenuInflater qui va permettre d'instancier un Menu XML
+		// Cr√©ation d'un MenuInflater qui va permettre d'instancier un Menu XML
 		// en un objet Menu
 		MenuInflater inflater = getMenuInflater();
-		// Instanciation du menu XML spÈcifier en un objet Menu
+		// Instanciation du menu XML sp√©cifier en un objet Menu
 		inflater.inflate(R.layout.menu, menu);
 
 		return true;
 	}
 
-	// MÈthode qui se dÈclenchera au clic sur un item
+	// M√©thode qui se d√©clenchera au clic sur un item
 	public boolean onOptionsItemSelected(MenuItem item) {
-		// On regarde quel item a ÈtÈ cliquÈ gr‚ce ‡ son id et on dÈclenche une
+		// On regarde quel item a √©t√© cliqu√© gr√¢ce √† son id et on d√©clenche une
 		// action
 		switch (item.getItemId()) {
 
@@ -108,7 +108,7 @@ public class Categorie extends Activity {
 
 			AlertDialog.Builder builder = new AlertDialog.Builder(context);
 			builder.setMessage(
-					"DÈveloppÈe par Bastien Gounon, Melvin Masdieu, Nicolas Sagon et Benjamin Grenier \n\nVersion 1.0")
+					"D√©velopp√©e par Bastien Gounon, Melvin Masdieu, Nicolas Sagon et Benjamin Grenier \n\nVersion 1.0")
 					.setTitle("BDE Forum");
 			AlertDialog dialog = builder.create();
 			dialog.show();

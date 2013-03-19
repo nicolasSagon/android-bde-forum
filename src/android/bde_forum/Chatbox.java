@@ -73,7 +73,7 @@ public class Chatbox extends Activity {
 		// confirmation
 		System.out.println("connected to " + socket);
 
-		// on attribue les flux d'entrÈe/de sortie sur le socket aux streams
+		// on attribue les flux d'entr√©e/de sortie sur le socket aux streams
 		// correspondants
 		try {
 			din = new DataInputStream(socket.getInputStream());
@@ -86,11 +86,11 @@ public class Chatbox extends Activity {
 			e1.printStackTrace();
 		}
 
-		// on lance le thread d'Ècoute
+		// on lance le thread d'√©coute
 		Thread t = new Thread() {
 			public void run() {
 				Log.i("test", "<DEBUG> loop du thread lancee");
-				// boucle d'Ècoute infinie
+				// boucle d'√©coute infinie
 				while (true) {
 
 					// on obtient le nouveau message
@@ -102,7 +102,7 @@ public class Chatbox extends Activity {
 						e.printStackTrace();
 					}
 
-					// on le met ‡ la suite de notre discussion
+					// on le met √† la suite de notre discussion
 					Message msg = new Message();
 					Bundle b = new Bundle();
 					b.putString("cle", message);
@@ -121,7 +121,7 @@ public class Chatbox extends Activity {
 
 	}
 
-	private void processMessage(String message) // mÈthode d'envoi du message
+	private void processMessage(String message) // m√©thode d'envoi du message
 												// vers le serveur
 	{
 		try {
@@ -152,11 +152,11 @@ public class Chatbox extends Activity {
 
 	// gestion des pref
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-		// on rÈcupËre le statut de retour de l'activitÈ 2 c'est ‡ dire
-		// l'activitÈ numÈro 3
+		// on r√©cup√®re le statut de retour de l'activit√© 2 c'est √† dire
+		// l'activit√© num√©ro 3
 		if (requestCode == 5) {
 
-			Toast.makeText(this, "Modifications terminÈes", Toast.LENGTH_SHORT)
+			Toast.makeText(this, "Modifications termin√©es", Toast.LENGTH_SHORT)
 					.show();
 
 		}
@@ -166,7 +166,7 @@ public class Chatbox extends Activity {
 
 	// gestion du menu
 	public boolean onOptionsItemSelected(MenuItem item) {
-		// On regarde quel item a ÈtÈ cliquÈ gr‚ce ‡ son id et on dÈclenche une
+		// On regarde quel item a √©t√© cliqu√© gr√¢ce √† son id et on d√©clenche une
 		// action
 		switch (item.getItemId()) {
 
@@ -188,7 +188,7 @@ public class Chatbox extends Activity {
 		case R.id.about:
 			AlertDialog.Builder builder = new AlertDialog.Builder(context);
 			builder.setMessage(
-					"DÈveloppÈe par Bastien Gounon, Melvin Masdieu, Nicolas Sagon et Benjamin Grenier \n\nVersion 1.0")
+					"D√©velopp√©e par Bastien Gounon, Melvin Masdieu, Nicolas Sagon et Benjamin Grenier \n\nVersion 1.0")
 					.setTitle("BDE Forum");
 			AlertDialog dialog = builder.create();
 			dialog.show();

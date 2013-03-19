@@ -76,16 +76,16 @@ public class MainActivity extends Activity {
 		});
 	}
 
-	// M�thode qui se d�clenchera lorsque vous appuierez sur le bouton menu
+	// Méthode qui se déclenchera lorsque vous appuierez sur le bouton menu
 	// du
-	// t�l�phone
+	// téléphone
 	public boolean onCreateOptionsMenu(Menu menu) {
 
-		// Cr�ation d'un MenuInflater qui va permettre d'instancier un Menu
+		// Création d'un MenuInflater qui va permettre d'instancier un Menu
 		// XML
 		// en un objet Menu
 		MenuInflater inflater = getMenuInflater();
-		// Instanciation du menu XML sp�cifier en un objet Menu
+		// Instanciation du menu XML spécifier en un objet Menu
 		inflater.inflate(R.layout.menumain, menu);
 
 		// Il n'est pas possible de modifier l'ic�ne d'ent�te du sous-menu
@@ -96,22 +96,22 @@ public class MainActivity extends Activity {
 		return true;
 	}
 
-	// M�thode qui se d�clenchera au clic sur un item
+	// Méthode qui se déclenchera au clic sur un item
 	public boolean onOptionsItemSelected(MenuItem item) {
-		// On regarde quel item a �t� cliqu� gr�ce � son id et on d�clenche une
+		// On regarde quel item a été cliqué grâce à son id et on déclenche une
 		// action
 		switch (item.getItemId()) {
 		case R.id.option:
 			AlertDialog.Builder builder = new AlertDialog.Builder(context);
-			builder.setMessage("Veuillez vous connecter pour acc�der aux options");
-			builder.setTitle("Probl�me de connexion");
+			builder.setMessage("Veuillez vous connecter pour accéder aux options");
+			builder.setTitle("Problème de connexion");
 			AlertDialog dialog = builder.create();
 			dialog.show();
 			return true;
 		case R.id.about:
 			AlertDialog.Builder builder2 = new AlertDialog.Builder(context);
 			builder2.setMessage(
-					"D�velopp�e par Bastien Gounon, Melvin Masdieu, Nicolas Sagon et Benjamin Grenier \n\nVersion 1.0")
+					"Développée par Bastien Gounon, Melvin Masdieu, Nicolas Sagon et Benjamin Grenier \n\nVersion 1.0")
 					.setTitle("BDE Forum");
 			AlertDialog dialog2 = builder2.create();
 			dialog2.show();
