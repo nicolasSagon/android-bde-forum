@@ -10,6 +10,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Threads extends Activity {
 
@@ -37,14 +38,24 @@ public class Threads extends Activity {
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		// on récupère le statut de retour de l'activité 3 c'est à dire
 		// l'activité numéro 4
-		if (requestCode == 4 || requestCode == 5) {
-			// si le code de retry est égal à 1 on stoppe l'activité 2
+
+		if (requestCode == 4 || requestCode == 5) { // si le code de retry est
+													// égal à 1 on stoppe
+													// l'activité 2
 			if (resultCode == 1) {
 				setResult(1);
 				finish();
 			}
 		}
+
+		if (requestCode == 5) {
+
+			Toast.makeText(this, "Modifications terminées", Toast.LENGTH_SHORT)
+					.show();
+
+		}
 		super.onActivityResult(requestCode, resultCode, data);
+
 	}
 
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -67,9 +78,19 @@ public class Threads extends Activity {
 		// On regarde quel item a été cliqué grâce à son id et on déclenche une
 		// action
 		switch (item.getItemId()) {
-		case R.id.option:
-			Intent intent = new Intent(this, Pref.class);
+		case R.id.pref:
+			Intent intent = new Intent(this, MyPreferences.class);
 			startActivityForResult(intent, 5);
+
+			return true;
+		case R.id.message:
+			Intent intent3 = new Intent(this, BoiteRecep.class);
+			startActivityForResult(intent3, 6);
+			return true;
+
+		case R.id.chatbox:
+			Intent intent2 = new Intent(this, Chatbox.class);
+			startActivityForResult(intent2, 7);
 			return true;
 
 		case R.id.about:
