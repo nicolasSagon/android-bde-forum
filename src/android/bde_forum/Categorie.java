@@ -10,6 +10,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Categorie extends Activity {
 	private TextView textCat;
@@ -59,6 +60,12 @@ public class Categorie extends Activity {
 			if (resultCode == 1) {
 				finish();
 			}
+			if (requestCode == 5) {
+
+				Toast.makeText(this, "Modifications terminées",
+						Toast.LENGTH_SHORT).show();
+
+			}
 		}
 		super.onActivityResult(requestCode, resultCode, data);
 	}
@@ -82,24 +89,33 @@ public class Categorie extends Activity {
 		// action
 		switch (item.getItemId()) {
 
-		case R.id.option:
-
-			Intent intent = new Intent(this, Pref.class);
+		case R.id.pref:
+			Intent intent = new Intent(this, MyPreferences.class);
 			startActivityForResult(intent, 5);
 
+			return true;
+		case R.id.message:
+			Intent intent3 = new Intent(this, BoiteRecep.class);
+			startActivityForResult(intent3, 6);
+			return true;
+
+		case R.id.chatbox:
+			Intent intent2 = new Intent(this, Chatbox.class);
+			startActivityForResult(intent2, 7);
 			return true;
 
 		case R.id.about:
 
 			AlertDialog.Builder builder = new AlertDialog.Builder(context);
-			builder.setMessage("Développée par Bastien Gounon, Melvin Masdieu, Nicolas Sagon et Benjamin Grenier \n\nVersion 1.0")
+			builder.setMessage(
+					"Développée par Bastien Gounon, Melvin Masdieu, Nicolas Sagon et Benjamin Grenier \n\nVersion 1.0")
 					.setTitle("BDE Forum");
 			AlertDialog dialog = builder.create();
 			dialog.show();
 			return true;
 
 		case R.id.deconnexion:
-				finish();
+			finish();
 			return true;
 		}
 		return false;

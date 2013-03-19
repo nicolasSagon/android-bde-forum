@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
 
     <string name="app_name">BDE-FORUM</string>
@@ -70,5 +69,10 @@
     <string name="chatmessage">Message</string>
     <string name="envoimessage">Envoyer</string>
     <string name="chatboxSet">Chatbox</string>
+    <string name="txtpseudo">Votre pseudo:</string>
+    <string name="txtname">Votre nom:</string>
+    <string name="txtprenom">Votre prénom:</string>
+    <string name="txtmail">Votre adresse mail:</string>
+    <string name="modify">Modifier</string>
 
 </resources>
