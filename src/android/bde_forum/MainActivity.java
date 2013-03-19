@@ -47,18 +47,20 @@ public class MainActivity extends Activity {
 				staycon = (CheckBox) findViewById(R.id.stayConnected);
 				boolean sc = staycon.isChecked();
 
-				Connection conn = new Connection(ps, pa, sc);
-				try {
-					conn.lancerConnection();
-				} catch (IOException e) {
+				//dÃ©commenter si serveur en marche
+				
+				//Connection conn = new Connection(ps, pa, sc);
+				//try {
+					//conn.lancerConnection();
+				//} catch (IOException e) {
 					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				if (conn.isConnected()) {
+				//	e.printStackTrace();
+				//}
+				//if (conn.isConnected()) {
 					Intent intent = new Intent(MainActivity.this,
 							Categorie.class);
 					startActivity(intent);
-				} else {
+				/*} else {
 					AlertDialog.Builder builder = new AlertDialog.Builder(
 							context);
 					builder.setMessage("Mauvais login ou password").setTitle(
@@ -77,33 +79,33 @@ public class MainActivity extends Activity {
 					AlertDialog dialog = builder.create();
 					dialog.show();
 
-				}
+				}*/
 
 			}
 
 		});
 	}
 
-	// Méthode qui se déclenchera lorsque vous appuierez sur le bouton menu du
-	// téléphone
+	// Mï¿½thode qui se dï¿½clenchera lorsque vous appuierez sur le bouton menu du
+	// tï¿½lï¿½phone
 	public boolean onCreateOptionsMenu(Menu menu) {
 
-		// Création d'un MenuInflater qui va permettre d'instancier un Menu XML
+		// Crï¿½ation d'un MenuInflater qui va permettre d'instancier un Menu XML
 		// en un objet Menu
 		MenuInflater inflater = getMenuInflater();
-		// Instanciation du menu XML spécifier en un objet Menu
+		// Instanciation du menu XML spï¿½cifier en un objet Menu
 		inflater.inflate(R.layout.menumain, menu);
 
-		// Il n'est pas possible de modifier l'icône d'entête du sous-menu via
+		// Il n'est pas possible de modifier l'icï¿½ne d'entï¿½te du sous-menu via
 		// le fichier XML on le fait donc en JAVA
 		// menu.getItem(0).getSubMenu().setHeaderIcon(R.drawable.option);
 
 		return true;
 	}
 
-	// Méthode qui se déclenchera au clic sur un item
+	// Mï¿½thode qui se dï¿½clenchera au clic sur un item
 	public boolean onOptionsItemSelected(MenuItem item) {
-		// On regarde quel item a été cliqué grâce à son id et on déclenche une
+		// On regarde quel item a ï¿½tï¿½ cliquï¿½ grï¿½ce ï¿½ son id et on dï¿½clenche une
 		// action
 		switch (item.getItemId()) {
 		case R.id.option:
@@ -113,7 +115,7 @@ public class MainActivity extends Activity {
 		case R.id.about:
 			AlertDialog.Builder builder = new AlertDialog.Builder(context);
 			builder.setMessage(
-					"Développée par Bastien Gounon, Melvin Masdieu, Nicolas Sagon et Benjamin Grenier \n\nVersion 1.0")
+					"Dï¿½veloppï¿½e par Bastien Gounon, Melvin Masdieu, Nicolas Sagon et Benjamin Grenier \n\nVersion 1.0")
 					.setTitle("BDE Forum");
 			AlertDialog dialog = builder.create();
 			dialog.show();
