@@ -22,6 +22,7 @@ public class Pref extends Activity {
 	{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.options);
+	
 
 		textBR = (TextView) findViewById(R.id.message);
 		textCompte = (TextView) findViewById(R.id.account);
