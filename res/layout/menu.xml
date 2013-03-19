@@ -6,17 +6,31 @@
         android:id="@+id/option"
         android:icon="@drawable/settings"
         android:title="Options">
+
+        <menu android:id="@+id/sousmenu">
+
+            <item
+                android:id="@+id/pref"
+                android:title="Préférences"/>
+
+            <item
+                android:id="@+id/chatbox"
+                android:title="Chatbox"/>
+
+            <item
+                android:id="@+id/message"
+                android:title="Messagerie"/>
+        </menu>
     </item>
-    
+
     <item
         android:id="@+id/about"
-       	android:icon="@drawable/about"
-        android:title="A propos"/>  
-    
+        android:icon="@drawable/about"
+        android:title="A propos"/>
 
     <item
         android:id="@+id/deconnexion"
-       	android:icon="@drawable/quit"
+        android:icon="@drawable/quit"
         android:title="Déconnexion"/>
 
 </menu>
