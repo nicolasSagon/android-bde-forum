@@ -47,56 +47,52 @@ public class MainActivity extends Activity {
 				staycon = (CheckBox) findViewById(R.id.stayConnected);
 				boolean sc = staycon.isChecked();
 
-				//dÃ©commenter si serveur en marche
-				
-				//Connection conn = new Connection(ps, pa, sc);
-				//try {
-					//conn.lancerConnection();
-				//} catch (IOException e) {
-					// TODO Auto-generated catch block
-				//	e.printStackTrace();
-				//}
-				//if (conn.isConnected()) {
-					Intent intent = new Intent(MainActivity.this,
-							Categorie.class);
-					startActivity(intent);
-				/*} else {
-					AlertDialog.Builder builder = new AlertDialog.Builder(
-							context);
-					builder.setMessage("Mauvais login ou password").setTitle(
-							"Erreur");
-					builder.setPositiveButton("Ok",
-							new DialogInterface.OnClickListener() {
-								public void onClick(DialogInterface dialog,
-										int id) {
-									dialog.cancel();
-									pseudo.setText("");
-									pass.setText("");
-									staycon.setSelected(false);
-								}
-							});
+				// dÃ©commenter si serveur en marche
 
-					AlertDialog dialog = builder.create();
-					dialog.show();
-
-				}*/
+				// Connection conn = new Connection(ps, pa, sc);
+				// try {
+				// conn.lancerConnection();
+				// } catch (IOException e) {
+				// TODO Auto-generated catch block
+				// e.printStackTrace();
+				// }
+				// if (conn.isConnected()) {
+				Intent intent = new Intent(MainActivity.this, Categorie.class);
+				startActivity(intent);
+				/*
+				 * } else { AlertDialog.Builder builder = new
+				 * AlertDialog.Builder( context);
+				 * builder.setMessage("Mauvais login ou password").setTitle(
+				 * "Erreur"); builder.setPositiveButton("Ok", new
+				 * DialogInterface.OnClickListener() { public void
+				 * onClick(DialogInterface dialog, int id) { dialog.cancel();
+				 * pseudo.setText(""); pass.setText("");
+				 * staycon.setSelected(false); } });
+				 * 
+				 * AlertDialog dialog = builder.create(); dialog.show();
+				 * 
+				 * }
+				 */
 
 			}
 
 		});
 	}
 
-	// Mï¿½thode qui se dï¿½clenchera lorsque vous appuierez sur le bouton menu du
+	// Mï¿½thode qui se dï¿½clenchera lorsque vous appuierez sur le bouton menu
+	// du
 	// tï¿½lï¿½phone
 	public boolean onCreateOptionsMenu(Menu menu) {
 
-		// Crï¿½ation d'un MenuInflater qui va permettre d'instancier un Menu XML
+		// Crï¿½ation d'un MenuInflater qui va permettre d'instancier un Menu
+		// XML
 		// en un objet Menu
 		MenuInflater inflater = getMenuInflater();
 		// Instanciation du menu XML spï¿½cifier en un objet Menu
 		inflater.inflate(R.layout.menumain, menu);
 
-		// Il n'est pas possible de modifier l'icï¿½ne d'entï¿½te du sous-menu via
+		// Il n'est pas possible de modifier l'icï¿½ne d'entï¿½te du sous-menu
+		// via
 		// le fichier XML on le fait donc en JAVA
 		// menu.getItem(0).getSubMenu().setHeaderIcon(R.drawable.option);
 
@@ -109,16 +105,19 @@ public class MainActivity extends Activity {
 		// action
 		switch (item.getItemId()) {
 		case R.id.option:
-			Intent intent = new Intent(this, Pref.class);
-			startActivityForResult(intent, 5);
-			return true;
-		case R.id.about:
 			AlertDialog.Builder builder = new AlertDialog.Builder(context);
-			builder.setMessage(
-					"Dï¿½veloppï¿½e par Bastien Gounon, Melvin Masdieu, Nicolas Sagon et Benjamin Grenier \n\nVersion 1.0")
-					.setTitle("BDE Forum");
+			builder.setMessage("Veuillez vous connecter pour accéder aux options");
+			builder.setTitle("Problème de connexion");
 			AlertDialog dialog = builder.create();
 			dialog.show();
+			return true;
+		case R.id.about:
+			AlertDialog.Builder builder2 = new AlertDialog.Builder(context);
+			builder2.setMessage(
+					"Développée par Bastien Gounon, Melvin Masdieu, Nicolas Sagon et Benjamin Grenier \n\nVersion 1.0")
+					.setTitle("BDE Forum");
+			AlertDialog dialog2 = builder2.create();
+			dialog2.show();
 			return true;
 
 		case R.id.deconnexion:
