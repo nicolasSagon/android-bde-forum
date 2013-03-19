@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory android:title="Utilisateur" >
+        <EditTextPreference
+            android:key="pseudo"
+            android:summary="Entrez votre pseudo"
+            android:title="Pseudo" >
+        </EditTextPreference>
+        <EditTextPreference
+            android:key="name"
+            android:summary="Entrez votre nom"
+            android:title="Nom" >
+        </EditTextPreference>
+        <EditTextPreference
+            android:key="prenom"
+            android:summary="Entrez votre prénom"
+            android:title="Prénom" >
+        </EditTextPreference>
+        <EditTextPreference
+            android:key="mail"
+            android:summary="Entrez votre adresse mail"
+            android:title="Adresse mail" >
+        </EditTextPreference>
+        
+    
+    </PreferenceCategory>
+    
+    <PreferenceCategory android:title="Notifications" >
+        <RingtonePreference
+            android:key="ringtone"
+            android:summary="Choisissez la sonnerie pour les notifications"
+            android:title="Sonnerie de notification" >
+        </RingtonePreference>
+
+        <CheckBoxPreference
+            android:key="notifActive"
+            android:summary="Activation des notifications"
+            android:title="Notifications" >
+        </CheckBoxPreference>
+    </PreferenceCategory>
+
+</PreferenceScreen>
