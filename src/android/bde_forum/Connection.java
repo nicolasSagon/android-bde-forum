@@ -3,6 +3,9 @@ package android.bde_forum;
 import java.io.*;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.net.URLConnection;
+
+import android.util.Log;
 
 public class Connection implements Serializable {
 
@@ -54,20 +57,35 @@ public class Connection implements Serializable {
 		/* supprimer le fichier */
 	}
 	
-	public void lancerConnection() throws IOException {
+	public void lancerConnection() {
 		
-		URL connectURL = new URL("http://192.168.1.32:8000/connect?login="+ name +"&password=" +pass);
-        BufferedReader in = new BufferedReader(
-        new InputStreamReader(connectURL.openStream()));
+		URL connectURL;
+		InputStream in = null;
+		DataInputStream dis;
+		try {
+			connectURL = new URL("http://server-android.no-ip.org:8000/connect?login="+ name +"&password=" +pass);
 
-        String inputLine;
-        String result = "";
-        while ((inputLine = in.readLine()) != null)
-            result += inputLine;
-        in.close();
+				in = connectURL.openStream();
+	        	dis = new DataInputStream(new BufferedInputStream(in));
+	            String inputLine;
+	            String result = "";
+	            while ((inputLine = dis.readLine()) != null)
+				    result += inputLine;
+				in.close();
+				
+				if (result.equals("true"))
+				{
+						connected = true;
+				}
+				else 
+				{
+					connected = false;
+				}			
+            
+		} catch (Exception e) {
+			Log.e("Connection.java", e.getMessage());
+		}
         
-        if (result.equals("true")) connected = true;
-        else connected = false;
 	}
 
 	public boolean isConnected() {

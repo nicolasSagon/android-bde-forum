@@ -1,10 +1,14 @@
 package android.bde_forum;
 
+import java.io.IOException;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -44,32 +48,35 @@ public class MainActivity extends Activity {
 				staycon = (CheckBox) findViewById(R.id.stayConnected);
 				boolean sc = staycon.isChecked();
 
-				// décommenter si serveur en marche
+				Connection conn = new Connection(ps, pa, sc);
+				Log.e("Connexion", "lancement");
+				conn.lancerConnection();
 
-				// Connection conn = new Connection(ps, pa, sc);
-				// try {
-				// conn.lancerConnection();
-				// } catch (IOException e) {
-				// TODO Auto-generated catch block
-				// e.printStackTrace();
-				// }
-				// if (conn.isConnected()) {
-				Intent intent = new Intent(MainActivity.this, Categorie.class);
-				startActivity(intent);
-				/*
-				 * } else { AlertDialog.Builder builder = new
-				 * AlertDialog.Builder( context);
-				 * builder.setMessage("Mauvais login ou password").setTitle(
-				 * "Erreur"); builder.setPositiveButton("Ok", new
-				 * DialogInterface.OnClickListener() { public void
-				 * onClick(DialogInterface dialog, int id) { dialog.cancel();
-				 * pseudo.setText(""); pass.setText("");
-				 * staycon.setSelected(false); } });
-				 * 
-				 * AlertDialog dialog = builder.create(); dialog.show();
-				 * 
-				 * }
-				 */
+				if (conn.isConnected()) {
+					Intent intent = new Intent(MainActivity.this,
+							Categorie.class);
+					startActivity(intent);
+
+			} 
+					else {
+					AlertDialog.Builder builder = new AlertDialog.Builder(
+							context);
+					builder.setMessage("Mauvais login ou password").setTitle(
+							"Erreur");
+					builder.setPositiveButton("Ok",
+							new DialogInterface.OnClickListener() {
+								public void onClick(DialogInterface dialog,
+										int id) {
+									dialog.cancel();
+									pseudo.setText("");
+									pass.setText("");
+									staycon.setSelected(false);
+								}
+							});
+
+					AlertDialog dialog = builder.create();
+					dialog.show();
+				}
 
 			}
 
@@ -98,7 +105,8 @@ public class MainActivity extends Activity {
 
 	// Méthode qui se déclenchera au clic sur un item
 	public boolean onOptionsItemSelected(MenuItem item) {
-		// On regarde quel item a été cliqué grâce à son id et on déclenche une
+		// On regarde quel item a été cliqué grâce à son id et on
+		// déclenche une
 		// action
 		switch (item.getItemId()) {
 		case R.id.option:
