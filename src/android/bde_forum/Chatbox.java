@@ -10,9 +10,13 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.preference.PreferenceManager;
+import android.text.Html;
+import android.text.Spanned;
 import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.MenuItem;
@@ -23,34 +27,41 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class Chatbox extends Activity {
-
+	
+	//infos de connexion
+	private String ip = "78.206.144.7";
+	private int port = 48555;
+	
+	//composants graphiques
 	private Button envoi = null;
 	private EditText newMess = null;
 	private TextView discussion = null;
 
+	//composants de connexion
 	private Socket socket;
-
 	private DataOutputStream dout;
 	private DataInputStream din;
 
 	final Context context = this;
-
-	public void onCreate(Bundle savedInstanceState) // A la creation de la vue
+	
+	//A la creation de la vue
+	public void onCreate(Bundle savedInstanceState) 
 	{
+		final SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
 		
+		//création du socket à partir des infos de connexion
 		try {
-			socket = new Socket("78.206.144.7", 48555);
+			socket = new Socket(ip, port); 
 		} catch (UnknownHostException e1) {
 			e1.printStackTrace();			
 		} catch (IOException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-		super.onCreate(savedInstanceState);
 		
+		super.onCreate(savedInstanceState);		
 		
-		
-		 if (socket != null){
+		//si la connexion s'effectue (<=> serveur ON)
+		if (socket != null){
 		
 		setContentView(R.layout.chatbox);
 
@@ -65,22 +76,13 @@ public class Chatbox extends Activity {
 			@Override
 			public void onClick(View v) {
 
-				// on envoie le message au serveur
-				processMessage(newMess.getText().toString());
+				//on envoie le message au serveur
+				processMessage("<font color=\"blue\">" + prefs.getString("pseudo", "") + " : " + "</font>" + newMess.getText().toString());
 			}
 
 		});
 
-		// bloc de connexion
-
-		// infos de connexion
-		
-		
-
-		// confirmation
-		System.out.println("connected to " + socket);
-
-		// on attribue les flux d'entrÃ©e/de sortie sur le socket aux streams
+		// on attribue les flux d'entrée/de sortie sur le socket aux streams
 		// correspondants
 		try {
 			din = new DataInputStream(socket.getInputStream());
@@ -93,48 +95,45 @@ public class Chatbox extends Activity {
 			e1.printStackTrace();
 		}
 
-		// on lance le thread d'Ã©coute
+		//on déclare le thread d'écoute et on lui affecte une méthode à run
 		Thread t = new Thread() {
+			
 			public void run() {
-				Log.i("test", "<DEBUG> loop du thread lancee");
-				// boucle d'Ã©coute infinie
+				
+				// boucle d'écoute infinie
 				while (true) {
-
+					
 					// on obtient le nouveau message
 					String message = null;
 					try {
 						message = din.readUTF();
 					} catch (IOException e) {
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
 
-					// on le met Ã  la suite de notre discussion
+					//on l'encapsule dans un message lisible par le handler, en le précédant du pseudo
 					Message msg = new Message();
 					Bundle b = new Bundle();
 					b.putString("cle", message);
 					msg.setData(b);
-					// send message to the handler with the current message
-					// handler
+					//on envoie cette capsule au handler
 					handler.sendMessage(msg);
-
-					// discussion.setText(message + "\n");
-
 				}
 			}
 		};
+		
+		// on lance le thread d'écoute
 		t.start();
-		Log.i("test", "<DEBUG> thread lance");}
+		}
 		 
+		//si la connexion ne s'effectue pas (<=> server OFF)
 		 else {
 			 setContentView(R.layout.errorserver);
-		 }
-		 
-
+		 } 
 	}
-
-	private void processMessage(String message) // mÃ©thode d'envoi du message
-												// vers le serveur
+	
+	// méthode d'envoi du message vers le serveur
+	private void processMessage(String message) 
 	{
 		try {
 
@@ -149,15 +148,22 @@ public class Chatbox extends Activity {
 		}
 	}
 
+	//le handler appelé lors de la réception d'un message
 	private Handler handler = new Handler() {
 
 		@Override
 		public void handleMessage(android.os.Message msg) {
 
-			// get the bundle and extract data by key
+			//on extrait la String contenue dans la capsule
 			Bundle b = msg.getData();
 			String txt = b.getString("cle");
-			discussion.append(txt + "\n");
+			
+			//on applique la mise en forme HTML pour avoir l'auteur en bleu
+			Spanned styledText = Html.fromHtml(txt);
+			
+			//on la met à la suite de notre discussion
+			discussion.append(styledText);
+			discussion.append("\n");
 		}
 
 	};

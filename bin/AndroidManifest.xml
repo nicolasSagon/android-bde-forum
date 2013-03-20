@@ -44,7 +44,8 @@
         <activity android:name="android.bde_forum.Categorie" />
         <activity android:name="android.bde_forum.Threads" />
         <activity android:name="android.bde_forum.Posts" />
-        <activity android:name="android.bde_forum.Chatbox" />
+        <activity android:name="android.bde_forum.Chatbox"
+            	  android:configChanges="keyboardHidden|orientation" />
         <activity android:name="android.bde_forum.MyPreferences" />
     </application>
 

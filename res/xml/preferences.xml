@@ -5,7 +5,7 @@
         <EditTextPreference
             android:key="pseudo"
             android:summary="Entrez votre pseudo"
-            android:title="Pseudo" >
+            android:title="Pseudo" android:defaultValue="Anon">
         </EditTextPreference>
         <EditTextPreference
             android:key="name"

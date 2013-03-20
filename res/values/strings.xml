@@ -75,5 +75,6 @@
     <string name="txtmail">Votre adresse mail:</string>
     <string name="modify">Modifier</string>
     <string name="connecterror">Impossible de joindre le serveur.</string>
+    <string name="error">ERREUR :</string>
 
 </resources>
