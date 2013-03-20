@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/beigeBackground"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:clickable="false"
+    android:focusable="false" >
+
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="424dp"
+        android:clickable="false"
+        android:longClickable="false" >
+
+        <TextView
+            android:id="@+id/discussion"
+            style="@style/textViewChatbox"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:gravity="bottom"
+            android:lines="16"
+            android:maxLines="16"
+            android:scrollbars="vertical"
+            android:textSize="20sp" >
+        </TextView>
+
+        <View
+            android:layout_height="2dip"
+            android:layout_marginTop="20dip" />
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <EditText
+                android:id="@+id/chatmessage"
+                android:layout_width="fill_parent"
+                android:layout_height="94dp"
+                android:layout_alignParentLeft="true"
+                android:layout_toLeftOf="@+id/envoimessage"
+                android:hint="@string/chatmessage"
+                android:inputType="textMultiLine" >
+
+                <requestFocus />
+            </EditText>
+
+            <Button
+                android:id="@+id/envoimessage"
+                android:layout_width="wrap_content"
+                android:layout_height="94dip"
+                android:layout_alignParentRight="true"
+                android:text="@string/envoimessage" />
+        </RelativeLayout>
+    </TableLayout>
+
+</ScrollView>
