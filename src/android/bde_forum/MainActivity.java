@@ -1,5 +1,9 @@
 package android.bde_forum;
 
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
@@ -46,8 +50,17 @@ public class MainActivity extends Activity {
 
 				// décommenter si serveur en marche
 
-				// Connection conn = new Connection(ps, pa, sc);
-				// try {
+				 Connection conn = new Connection(ps, pa, sc);
+				 if(sc){
+					 try {
+						conn.serialisation();
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					 
+				 }
+				//try {
 				// conn.lancerConnection();
 				// } catch (IOException e) {
 				// TODO Auto-generated catch block
