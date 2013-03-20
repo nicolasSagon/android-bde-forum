@@ -5,7 +5,9 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.net.URL;
-import java.lang.*;
+import java.net.URLConnection;
+
+import android.util.Log;
 
 public class Connection implements Serializable {
 
@@ -115,23 +117,35 @@ public class Connection implements Serializable {
 		/* supprimer le fichier */
 	}
 
-	public void lancerConnection() throws IOException {
+	public void lancerConnection() {
+		
+		URL connectURL;
+		InputStream in = null;
+		DataInputStream dis;
+		try {
+			connectURL = new URL("http://server-android.no-ip.org:8000/connect?login="+ name +"&password=" +pass);
 
-		URL connectURL = new URL("http://192.168.1.32:8000/connect?login="
-				+ name + "&password=" + pass);
-		BufferedReader in = new BufferedReader(new InputStreamReader(
-				connectURL.openStream()));
-
-		String inputLine;
-		String result = "";
-		while ((inputLine = in.readLine()) != null)
-			result += inputLine;
-		in.close();
-
-		if (result.equals("true"))
-			connected = true;
-		else
-			connected = false;
+				in = connectURL.openStream();
+	        	dis = new DataInputStream(new BufferedInputStream(in));
+	            String inputLine;
+	            String result = "";
+	            while ((inputLine = dis.readLine()) != null)
+				    result += inputLine;
+				in.close();
+				
+				if (result.equals("true"))
+				{
+						connected = true;
+				}
+				else 
+				{
+					connected = false;
+				}			
+            
+		} catch (Exception e) {
+			Log.e("Connection.java", e.getMessage());
+		}
+        
 	}
 
 	public boolean isConnected() {
