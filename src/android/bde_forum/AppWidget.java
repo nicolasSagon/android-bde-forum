@@ -16,8 +16,7 @@ public class AppWidget extends AppWidgetProvider {
 			new MessagePrive("melvin", "Salut comment vas tu ?"),
 			new MessagePrive("nicolas", "Tu peux me passer le tp de reseau ?"),
 			new MessagePrive("benjamin", "Je vais m'acheter une moto !!! vroom"),
-			new MessagePrive("bastien",
-					"De toute façon l'iut ça sert à rien je rage quit !") };
+			new MessagePrive("bastien", "De toute façon l'iut ça sert à rien je rage quit !") };
 
 	
 	// Intitulé de l'extra qui contient la direction du défilé

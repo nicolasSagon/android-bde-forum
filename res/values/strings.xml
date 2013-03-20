@@ -74,5 +74,6 @@
     <string name="txtprenom">Votre prénom:</string>
     <string name="txtmail">Votre adresse mail:</string>
     <string name="modify">Modifier</string>
+    <string name="connecterror">Impossible de joindre le serveur.</string>
 
 </resources>

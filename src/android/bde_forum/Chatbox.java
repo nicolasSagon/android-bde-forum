@@ -37,7 +37,21 @@ public class Chatbox extends Activity {
 
 	public void onCreate(Bundle savedInstanceState) // A la creation de la vue
 	{
+		
+		try {
+			socket = new Socket("78.206.144.7", 48555);
+		} catch (UnknownHostException e1) {
+			e1.printStackTrace();			
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		super.onCreate(savedInstanceState);
+		
+		
+		
+		 if (socket != null){
+		
 		setContentView(R.layout.chatbox);
 
 		newMess = (EditText) findViewById(R.id.chatmessage);
@@ -60,15 +74,8 @@ public class Chatbox extends Activity {
 		// bloc de connexion
 
 		// infos de connexion
-		try {
-			socket = new Socket("78.206.144.7", 48555);
-		} catch (UnknownHostException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		} catch (IOException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
+		
+		
 
 		// confirmation
 		System.out.println("connected to " + socket);
@@ -117,7 +124,12 @@ public class Chatbox extends Activity {
 			}
 		};
 		t.start();
-		Log.i("test", "<DEBUG> thread lance");
+		Log.i("test", "<DEBUG> thread lance");}
+		 
+		 else {
+			 setContentView(R.layout.errorserver);
+		 }
+		 
 
 	}
 
