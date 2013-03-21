@@ -13,27 +13,29 @@ import android.widget.Toast;
 public class BoiteRecep extends Activity {
 	Context context;
 
+	@Override
 	public void onCreate(Bundle savedInstanceState) {
 
 		super.onCreate(savedInstanceState);
 	}
 
+	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 
-		// Création d'un MenuInflater qui va permettre d'instancier un Menu XML
-		// en un objet Menu
+		
 		MenuInflater inflater = getMenuInflater();
-		// Instanciation du menu XML spécifier en un objet Menu
+		
 		inflater.inflate(R.layout.menu, menu);
 
 		return true;
 	}
 
+	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
 		if (requestCode == 5) {
 
-			Toast.makeText(this, "Modifications terminées", Toast.LENGTH_SHORT)
+			Toast.makeText(this, "Modifications termin�es", Toast.LENGTH_SHORT)
 					.show();
 
 		}
@@ -41,10 +43,10 @@ public class BoiteRecep extends Activity {
 		super.onActivityResult(requestCode, resultCode, data);
 	}
 
-	// Méthode qui se déclenchera au clic sur un item
+	
+	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		// On regarde quel item a été cliqué grâce  son id et on déclenche une
-		// action
+		
 		switch (item.getItemId()) {
 
 		case R.id.pref:
@@ -66,7 +68,7 @@ public class BoiteRecep extends Activity {
 
 			AlertDialog.Builder builder = new AlertDialog.Builder(context);
 			builder.setMessage(
-					"Développée par Bastien Gounon, Melvin Masdieu, Nicolas Sagon et Benjamin Grenier \n\nVersion 1.0")
+					"Développ�e par Bastien Gounon, Melvin Masdieu, Nicolas Sagon et Benjamin Grenier \n\nVersion 1.0")
 					.setTitle("BDE Forum");
 			AlertDialog dialog = builder.create();
 			dialog.show();

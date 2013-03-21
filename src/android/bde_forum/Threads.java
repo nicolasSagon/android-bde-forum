@@ -17,6 +17,7 @@ public class Threads extends Activity {
 	private TextView textThread;
 	final Context context = this;
 
+	@Override
 	public void onCreate(Bundle savedInstanceState) // A la creation de la vue
 	{
 		super.onCreate(savedInstanceState);
@@ -35,13 +36,10 @@ public class Threads extends Activity {
 
 	}
 
+	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-		// on récupère le statut de retour de l'activité 3 c'est à dire
-		// l'activité numéro 4
 
-		if (requestCode == 4 || requestCode == 5) { // si le code de retry est
-													// égal à 1 on stoppe
-													// l'activité 2
+		if (requestCode == 4 || requestCode == 5) {
 			if (resultCode == 1) {
 				setResult(1);
 				finish();
@@ -50,7 +48,7 @@ public class Threads extends Activity {
 
 		if (requestCode == 5) {
 
-			Toast.makeText(this, "Modifications terminées", Toast.LENGTH_SHORT)
+			Toast.makeText(this, "Modifications termin�es", Toast.LENGTH_SHORT)
 					.show();
 
 		}
@@ -58,25 +56,19 @@ public class Threads extends Activity {
 
 	}
 
+	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 
-		// Création d'un MenuInflater qui va permettre d'instancier un Menu XML
-		// en un objet Menu
 		MenuInflater inflater = getMenuInflater();
-		// Instanciation du menu XML spécifier en un objet Menu
-		inflater.inflate(R.layout.menu, menu);
 
-		// Il n'est pas possible de modifier l'icône d'entète du sous-menu via
-		// le fichier XML on le fait donc en JAVA
-		// menu.getItem(0).getSubMenu().setHeaderIcon(R.drawable.option);
+		inflater.inflate(R.layout.menu, menu);
 
 		return true;
 	}
 
-	// Méthode qui se déclenchera au clic sur un item
+	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		// On regarde quel item a été cliqué grâce à son id et on déclenche une
-		// action
+
 		switch (item.getItemId()) {
 		case R.id.pref:
 			Intent intent = new Intent(this, MyPreferences.class);
@@ -96,7 +88,7 @@ public class Threads extends Activity {
 		case R.id.about:
 			AlertDialog.Builder builder = new AlertDialog.Builder(context);
 			builder.setMessage(
-					"Développée par Bastien Gounon, Melvin Masdieu, Nicolas Sagon et Benjamin Grenier \n\nVersion 1.0")
+					"Développ�e par Bastien Gounon, Melvin Masdieu, Nicolas Sagon et Benjamin Grenier \n\nVersion 1.0")
 					.setTitle("BDE Forum");
 			AlertDialog dialog = builder.create();
 			dialog.show();
@@ -104,7 +96,7 @@ public class Threads extends Activity {
 
 		case R.id.deconnexion:
 			setResult(1);
-			// et on ferme cette activité
+
 			finish();
 
 			return true;

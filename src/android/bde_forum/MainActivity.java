@@ -2,10 +2,6 @@ package android.bde_forum;
 
 import java.io.IOException;
 
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
@@ -55,7 +51,6 @@ public class MainActivity extends Activity {
 				Connection conn = new Connection(ps, pa, sc);
 				Log.e("Connexion", "lancement");
 				conn.lancerConnection();
-				
 
 				if (conn.isConnected()) {
 					try {
@@ -68,14 +63,14 @@ public class MainActivity extends Activity {
 							Categorie.class);
 					startActivity(intent);
 
-			} 
-					else {
+				} else {
 					AlertDialog.Builder builder = new AlertDialog.Builder(
 							context);
 					builder.setMessage("Mauvais login ou password").setTitle(
 							"Erreur");
 					builder.setPositiveButton("Ok",
 							new DialogInterface.OnClickListener() {
+								@Override
 								public void onClick(DialogInterface dialog,
 										int id) {
 									dialog.cancel();
@@ -94,31 +89,19 @@ public class MainActivity extends Activity {
 		});
 	}
 
-	// Méthode qui se déclenchera lorsque vous appuierez sur le bouton menu
-	// du
-	// téléphone
+	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 
-		// Création d'un MenuInflater qui va permettre d'instancier un Menu
-		// XML
-		// en un objet Menu
 		MenuInflater inflater = getMenuInflater();
-		// Instanciation du menu XML spécifier en un objet Menu
-		inflater.inflate(R.layout.menumain, menu);
 
-		// Il n'est pas possible de modifier l'ic�ne d'ent�te du sous-menu
-		// via
-		// le fichier XML on le fait donc en JAVA
-		// menu.getItem(0).getSubMenu().setHeaderIcon(R.drawable.option);
+		inflater.inflate(R.layout.menumain, menu);
 
 		return true;
 	}
 
-	// Méthode qui se déclenchera au clic sur un item
+	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		// On regarde quel item a été cliqué grâce à son id et on
-		// déclenche une
-		// action
+
 		switch (item.getItemId()) {
 		case R.id.option:
 			AlertDialog.Builder builder = new AlertDialog.Builder(context);
@@ -130,7 +113,7 @@ public class MainActivity extends Activity {
 		case R.id.about:
 			AlertDialog.Builder builder2 = new AlertDialog.Builder(context);
 			builder2.setMessage(
-					"Développée par Bastien Gounon, Melvin Masdieu, Nicolas Sagon et Benjamin Grenier \n\nVersion 1.0")
+					"Développ�e par Bastien Gounon, Melvin Masdieu, Nicolas Sagon et Benjamin Grenier \n\nVersion 1.0")
 					.setTitle("BDE Forum");
 			AlertDialog dialog2 = builder2.create();
 			dialog2.show();
