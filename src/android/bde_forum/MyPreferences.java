@@ -12,6 +12,7 @@ public class MyPreferences extends PreferenceActivity {
 		addPreferencesFromResource(R.xml.preferences);
 	}
 
+	@Override
 	public void onBackPressed() {
 		setResult(RESULT_OK);
 		super.onBackPressed();

@@ -2,8 +2,6 @@ package android.bde_forum;
 
 import java.io.*;
 import java.net.URL;
-import java.net.URLConnection;
-
 import android.os.Environment;
 import android.util.Log;
 
@@ -92,7 +90,7 @@ public class Connection implements Serializable {
 			// Comme i s'incrémente jusqu'à egalité avec la taille du mot, à
 			// chaque passage dans la fonction chaque lettre sera converti.
 			c = passCrypte.charAt(i);
-			double a = (double) c;
+			double a = c;
 			ascii = a;
 
 			// ascii = Integer.parseInt(String.valueOf(passCrypte.charAt(i)));

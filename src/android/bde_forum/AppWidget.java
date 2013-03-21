@@ -38,6 +38,7 @@ public class AppWidget extends AppWidgetProvider {
 	// Indice actuel dans le tableau des messages
 	private int indice = 0;
 
+	@Override
 	public void onUpdate(Context context, AppWidgetManager appWidgetManager,
 			int[] appWidgetIds) {
 		super.onUpdate(context, appWidgetManager, appWidgetIds);
@@ -104,6 +105,7 @@ public class AppWidget extends AppWidgetProvider {
 		}
 	}
 
+	@Override
 	public void onReceive(Context context, Intent intent) {
 
 		int tmp = intent.getIntExtra(EXTRA_INDICE, -1);
