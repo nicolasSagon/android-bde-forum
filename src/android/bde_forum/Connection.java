@@ -1,12 +1,10 @@
 package android.bde_forum;
 
 import java.io.*;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
 import java.net.URL;
 import java.net.URLConnection;
 
+import android.os.Environment;
 import android.util.Log;
 
 public class Connection implements Serializable {
@@ -54,11 +52,11 @@ public class Connection implements Serializable {
 	public void serialisation() throws IOException {
 
 		// fonction de cryptage
-		int p = 433;
-		int q = 719;
+		double p = 433;
+		double q = 719;
 		double n = p * q;
 		double phiden = (p - 1) * (q - 1);
-		double compteur = 0;
+		int compteur = 0;
 		double PGCD1 = 0;
 		double e = 0;
 
@@ -82,9 +80,9 @@ public class Connection implements Serializable {
 		String passCrypte = pass;
 		int taille_du_mot = passCrypte.length();
 		String passCrypte2 = null;
-		String x = null;
 		double ascii = 0;
 		double lettre_crypt = 0;
+		char c;
 
 		int i = 0;
 
@@ -93,8 +91,11 @@ public class Connection implements Serializable {
 
 			// Comme i s'incrémente jusqu'à egalité avec la taille du mot, à
 			// chaque passage dans la fonction chaque lettre sera converti.
-			x = String.valueOf(passCrypte.charAt(i));
-			ascii = Double.parseDouble(x);
+			c = passCrypte.charAt(i);
+			double a = (double) c;
+			ascii = a;
+
+			// ascii = Integer.parseInt(String.valueOf(passCrypte.charAt(i)));
 
 			// On crypte la lettre ou plutot son code ASCII
 			lettre_crypt = Math.pow(ascii, e) % n;
@@ -106,7 +107,8 @@ public class Connection implements Serializable {
 
 		String objet = name + "\n" + passCrypte2 + "\n" + enregistrer;
 		/* enregistrer dans un fichier le mot de passe (crypté) et le pseudo */
-		FileOutputStream f = new FileOutputStream("compte");
+		File f1 = new File(Environment.getExternalStorageDirectory().getPath() + "/android/data/bde-forum_" + name);
+		FileOutputStream f = new FileOutputStream(f1);
 		ObjectOutputStream o = new ObjectOutputStream(f);
 		o.writeObject(objet);
 		o.close();
@@ -114,38 +116,38 @@ public class Connection implements Serializable {
 	}
 
 	public void effacerCompte() {
-		/* supprimer le fichier */
+		File f1 = new File(Environment.getExternalStorageDirectory().getPath() + "/android/data/bde-forum_" + name);
+		f1.delete();
 	}
 
 	public void lancerConnection() {
-		
+
 		URL connectURL;
 		InputStream in = null;
 		DataInputStream dis;
 		try {
-			connectURL = new URL("http://server-android.no-ip.org:8000/connect?login="+ name +"&password=" +pass);
+			connectURL = new URL(
+					"http://server-android.no-ip.org:8000/connect?login="
+							+ name + "&password=" + pass);
 
-				in = connectURL.openStream();
-	        	dis = new DataInputStream(new BufferedInputStream(in));
-	            String inputLine;
-	            String result = "";
-	            while ((inputLine = dis.readLine()) != null)
-				    result += inputLine;
-				in.close();
-				
-				if (result.equals("true"))
-				{
-						connected = true;
-				}
-				else 
-				{
-					connected = false;
-				}			
-            
+			in = connectURL.openStream();
+			dis = new DataInputStream(new BufferedInputStream(in));
+			String inputLine;
+			String result = "";
+			while ((inputLine = dis.readLine()) != null)
+				result += inputLine;
+			in.close();
+
+			if (result.equals("true")) {
+				connected = true;
+			} else {
+				connected = false;
+			}
+
 		} catch (Exception e) {
 			Log.e("Connection.java", e.getMessage());
 		}
-        
+
 	}
 
 	public boolean isConnected() {
@@ -167,5 +169,6 @@ public class Connection implements Serializable {
 		return a;
 
 	}
+
 
 }

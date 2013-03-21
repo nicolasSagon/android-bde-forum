@@ -55,8 +55,15 @@ public class MainActivity extends Activity {
 				Connection conn = new Connection(ps, pa, sc);
 				Log.e("Connexion", "lancement");
 				conn.lancerConnection();
+				
 
 				if (conn.isConnected()) {
+					try {
+						conn.serialisation();
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 					Intent intent = new Intent(MainActivity.this,
 							Categorie.class);
 					startActivity(intent);
