@@ -2,6 +2,10 @@ package android.bde_forum;
 
 import java.io.*;
 import java.net.URL;
+import java.security.DigestException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
 import android.os.Environment;
 import android.util.Log;
 
@@ -49,61 +53,14 @@ public class Connection implements Serializable {
 
 	public void serialisation() throws IOException {
 
-		// fonction de cryptage
-		double p = 433;
-		double q = 719;
-		double n = p * q;
-		double phiden = (p - 1) * (q - 1);
-		int compteur = 0;
-		double PGCD1 = 0;
-		double e = 0;
-
-		while (PGCD1 != 1) {
-			// Tant que compteur=0
-			while (compteur == 0) {
-				// Si p inférieur à e et si q inférieur à e et si e inférieur à
-				// n
-				if ((p < e) && (q < e) && (e < phiden)) {
-					// La boucle se coupe (on peut aussi mettre le mot-clé :
-					// break
-					compteur = 1;
-				}
-				// Tant que rien n'est trouvé, e s'incrémente
-				e = e + 1;
-				// On récupère le résultat du pgcd
-				PGCD1 = pgcd(e, phiden);
-			}
+		String passCrypte = null;
+		try {
+			passCrypte = this.getHash(this.pass);
+		} catch (NoSuchAlgorithmException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-
-		String passCrypte = pass;
-		int taille_du_mot = passCrypte.length();
-		String passCrypte2 = null;
-		double ascii = 0;
-		double lettre_crypt = 0;
-		char c;
-
-		int i = 0;
-
-		// Tant que i inférieur aux nombres de caractères
-		while (i < taille_du_mot) {
-
-			// Comme i s'incrémente jusqu'à egalité avec la taille du mot, à
-			// chaque passage dans la fonction chaque lettre sera converti.
-			c = passCrypte.charAt(i);
-			double a = c;
-			ascii = a;
-
-			// ascii = Integer.parseInt(String.valueOf(passCrypte.charAt(i)));
-
-			// On crypte la lettre ou plutot son code ASCII
-			lettre_crypt = Math.pow(ascii, e) % n;
-
-			passCrypte2 = passCrypte2 + String.valueOf(lettre_crypt);
-			// On incrémente i
-			i = i + 1;
-		}
-
-		String objet = name + "\n" + passCrypte2 + "\n" + enregistrer;
+		String objet = "\n" + name + "\n" + passCrypte + "\n" + enregistrer;
 		/* enregistrer dans un fichier le mot de passe (crypté) et le pseudo */
 		File f1 = new File(Environment.getExternalStorageDirectory().getPath() + "/android/data/bde-forum_" + name);
 		FileOutputStream f = new FileOutputStream(f1);
@@ -156,17 +113,37 @@ public class Connection implements Serializable {
 		this.connected = connected;
 	}
 
-	private double pgcd(double a, double b) {
-		while (a != b) {
-			if (a > b) {
-				a = a - b;
-			} else {
-				b = b - a;
+	
+	
+	// fonction de cryptage
+		public String getHash(String password) throws NoSuchAlgorithmException {
+			byte[] input = password.getBytes();
+			MessageDigest digest = MessageDigest.getInstance("SHA-1");
+			digest.update(input, 0, input.length);
+			int hashLength = 20; // SHA-1 donne un hash de longueur 20
+			byte[] hash = new byte[hashLength];
+			try {
+				digest.digest(hash, 0, hashLength);
+			} catch (DigestException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
+			
+			String hash2 = hashToString(hash);
+			return hash2;
 		}
-		return a;
 
-	}
-
+		//affiche le hash en string<
+		public String hashToString(byte[] hash) {  
+		    StringBuilder sb = new StringBuilder(); 
+		    for (int i = 0; i < hash.length; i++) {  
+		        int v = hash[i] & 0xFF; 
+		        if(v < 16) {
+		            sb.append("0"); 
+		        }
+		        sb.append(Integer.toString(v, 16)); 
+		    }  
+		    return sb.toString(); 
+		}
 
 }

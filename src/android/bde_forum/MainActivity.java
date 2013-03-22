@@ -49,10 +49,10 @@ public class MainActivity extends Activity {
 				boolean sc = staycon.isChecked();
 
 				Connection conn = new Connection(ps, pa, sc);
-				Log.e("Connexion", "lancement");
+				/*Log.e("Connexion", "lancement");
 				conn.lancerConnection();
 
-				if (conn.isConnected()) {
+				if (conn.isConnected()) {*/
 					try {
 						conn.serialisation();
 					} catch (IOException e) {
@@ -63,7 +63,7 @@ public class MainActivity extends Activity {
 							Categorie.class);
 					startActivity(intent);
 
-				} else {
+				/*} else {
 					AlertDialog.Builder builder = new AlertDialog.Builder(
 							context);
 					builder.setMessage("Mauvais login ou password").setTitle(
@@ -82,7 +82,7 @@ public class MainActivity extends Activity {
 
 					AlertDialog dialog = builder.create();
 					dialog.show();
-				}
+				}*/
 
 			}
 
@@ -113,7 +113,7 @@ public class MainActivity extends Activity {
 		case R.id.about:
 			AlertDialog.Builder builder2 = new AlertDialog.Builder(context);
 			builder2.setMessage(
-					"Développ�e par Bastien Gounon, Melvin Masdieu, Nicolas Sagon et Benjamin Grenier \n\nVersion 1.0")
+					"Développ�e par Bastien Gounon, Melvin Masdieu, Nicolas Sagon et Benjamin Grenier \n\nVersion 1.0")
 					.setTitle("BDE Forum");
 			AlertDialog dialog2 = builder2.create();
 			dialog2.show();

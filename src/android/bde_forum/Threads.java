@@ -48,7 +48,7 @@ public class Threads extends Activity {
 
 		if (requestCode == 5) {
 
-			Toast.makeText(this, "Modifications terminées", Toast.LENGTH_SHORT)
+			Toast.makeText(this, "Modifications terminï¿½es", Toast.LENGTH_SHORT)
 					.show();
 
 		}
@@ -88,7 +88,7 @@ public class Threads extends Activity {
 		case R.id.about:
 			AlertDialog.Builder builder = new AlertDialog.Builder(context);
 			builder.setMessage(
-					"DÃ©veloppée par Bastien Gounon, Melvin Masdieu, Nicolas Sagon et Benjamin Grenier \n\nVersion 1.0")
+					"DÃ©veloppï¿½e par Bastien Gounon, Melvin Masdieu, Nicolas Sagon et Benjamin Grenier \n\nVersion 1.0")
 					.setTitle("BDE Forum");
 			AlertDialog dialog = builder.create();
 			dialog.show();

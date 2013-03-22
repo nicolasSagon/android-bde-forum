@@ -66,14 +66,20 @@
     <string name="mpWidget">message prive numero 1</string>
     <string name="precedentWi">Précédent</string>
     <string name="suivantWi">Suivant</string>
+    
+    <!--  String pour la chatbox -->
     <string name="chatmessage">Message</string>
     <string name="envoimessage">Envoyer</string>
     <string name="chatboxSet">Chatbox</string>
+    
+    <!-- string préférences -->
     <string name="txtpseudo">Votre pseudo:</string>
     <string name="txtname">Votre nom:</string>
     <string name="txtprenom">Votre prénom:</string>
     <string name="txtmail">Votre adresse mail:</string>
     <string name="modify">Modifier</string>
+    
+    
     <string name="connecterror">Impossible de joindre le serveur.</string>
     <string name="error">ERREUR :</string>
 
