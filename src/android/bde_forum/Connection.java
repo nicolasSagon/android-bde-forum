@@ -1,10 +1,19 @@
 package android.bde_forum;
 
-import java.io.*;
+import java.io.BufferedInputStream;
+import java.io.DataInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+import java.io.StreamCorruptedException;
 import java.net.URL;
-import java.security.DigestException;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
+
+import org.jasypt.util.text.BasicTextEncryptor;
 
 import android.os.Environment;
 import android.util.Log;
@@ -15,10 +24,10 @@ public class Connection implements Serializable {
 	private String name = null;
 	private boolean enregistrer = false;
 	private boolean connected = false;
+	private BasicTextEncryptor textEncryptor = new BasicTextEncryptor();
 
 	public Connection() {
-		pass = null;
-		name = null;
+
 	}
 
 	public Connection(String pseudo, String mdp, boolean save) {
@@ -53,16 +62,15 @@ public class Connection implements Serializable {
 
 	public void serialisation() throws IOException {
 
-		String passCrypte = null;
-		try {
-			passCrypte = this.getHash(this.pass);
-		} catch (NoSuchAlgorithmException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		String cleDeCryptage = name;
+		String password = pass;
+
+		String passCrypte = cryptage(cleDeCryptage, password);
+
 		String objet = "\n" + name + "\n" + passCrypte + "\n" + enregistrer;
 		/* enregistrer dans un fichier le mot de passe (crypté) et le pseudo */
-		File f1 = new File(Environment.getExternalStorageDirectory().getPath() + "/android/data/bde-forum_" + name);
+		File f1 = new File(Environment.getExternalStorageDirectory().getPath()
+				+ "/android/data/bde-forum");
 		FileOutputStream f = new FileOutputStream(f1);
 		ObjectOutputStream o = new ObjectOutputStream(f);
 		o.writeObject(objet);
@@ -70,8 +78,29 @@ public class Connection implements Serializable {
 		f.close();
 	}
 
+	public void deserialisation() throws StreamCorruptedException, IOException,
+			ClassNotFoundException {
+		FileInputStream fichier = new FileInputStream(Environment
+				.getExternalStorageDirectory().getPath()
+				+ "/android/data/bde-forum");
+		ObjectInputStream ois = new ObjectInputStream(fichier);
+		String objet = (String) ois.readObject();
+
+		String[] details = objet.split("\n");
+		// details[1] = name
+		// details[2] = pass crypte
+		// details[3] = rester connecte
+		String mdp = decryptage(details[2]);
+		pass = mdp;
+		name = details[1];
+		enregistrer = Boolean.parseBoolean(details[3]);
+		ois.close();
+
+	}
+
 	public void effacerCompte() {
-		File f1 = new File(Environment.getExternalStorageDirectory().getPath() + "/android/data/bde-forum_" + name);
+		File f1 = new File(Environment.getExternalStorageDirectory().getPath()
+				+ "/android/data/bde-forum");
 		f1.delete();
 	}
 
@@ -113,37 +142,23 @@ public class Connection implements Serializable {
 		this.connected = connected;
 	}
 
-	
-	
 	// fonction de cryptage
-		public String getHash(String password) throws NoSuchAlgorithmException {
-			byte[] input = password.getBytes();
-			MessageDigest digest = MessageDigest.getInstance("SHA-1");
-			digest.update(input, 0, input.length);
-			int hashLength = 20; // SHA-1 donne un hash de longueur 20
-			byte[] hash = new byte[hashLength];
-			try {
-				digest.digest(hash, 0, hashLength);
-			} catch (DigestException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			
-			String hash2 = hashToString(hash);
-			return hash2;
-		}
+	public String cryptage(String cle, String password) {
 
-		//affiche le hash en string<
-		public String hashToString(byte[] hash) {  
-		    StringBuilder sb = new StringBuilder(); 
-		    for (int i = 0; i < hash.length; i++) {  
-		        int v = hash[i] & 0xFF; 
-		        if(v < 16) {
-		            sb.append("0"); 
-		        }
-		        sb.append(Integer.toString(v, 16)); 
-		    }  
-		    return sb.toString(); 
-		}
+		// création d'un Encryptor avec une clé de cryptage
+		textEncryptor.setPassword(cle);
+		String myEncryptedPassword = textEncryptor.encrypt(password);
+
+		return myEncryptedPassword;
+
+	}
+
+	// fonction de decryptage
+	public String decryptage(String myEncryptedPassword) {
+
+		String plainText = textEncryptor.decrypt(myEncryptedPassword);
+
+		return plainText;
+	}
 
 }

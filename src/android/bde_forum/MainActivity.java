@@ -1,6 +1,7 @@
 package android.bde_forum;
 
 import java.io.IOException;
+import java.io.StreamCorruptedException;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -59,6 +60,7 @@ public class MainActivity extends Activity {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
+					
 					Intent intent = new Intent(MainActivity.this,
 							Categorie.class);
 					startActivity(intent);
