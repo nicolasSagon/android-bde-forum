@@ -42,10 +42,12 @@
             android:label="@string/title_activity_settings" >
         </activity>
         <activity android:name="android.bde_forum.Categorie" />
+        <activity android:name="android.bde_forum.CategorieAuto" />
         <activity android:name="android.bde_forum.Threads" />
         <activity android:name="android.bde_forum.Posts" />
         <activity android:name="android.bde_forum.Chatbox" />
         <activity android:name="android.bde_forum.MyPreferences" />
+        <activity android:name="android.bde_forum.ThreadAuto" />
     </application>
 
 </manifest>
