@@ -45,9 +45,10 @@ public class Chatbox extends Activity {
 
 	final Context context = this;
 
-	// A la creation de la vue
+	//Au lancement de l'activité
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
+		//permet de récupérer le pseudo dans les préférences
 		final SharedPreferences prefs = PreferenceManager
 				.getDefaultSharedPreferences(context);
 
@@ -78,10 +79,14 @@ public class Chatbox extends Activity {
 				@Override
 				public void onClick(View v) {
 
-					// on envoie le message au serveur
-					processMessage("<font color=\"blue\">"
-							+ prefs.getString("pseudo", "") + " : " + "</font>"
-							+ newMess.getText().toString());
+					// on envoie le message au serveur (encapsulé dans le code HTML pour la mise en forme, et précédé du pseudo)
+					processMessage(
+							"<font color=\"blue\">"
+							+ prefs.getString("pseudo", "") //récupère le pseudo enregistré dans les préférences
+							+ " : "
+							+ "</font>"
+							+ newMess.getText().toString()
+							);
 				}
 				
 				
@@ -110,7 +115,7 @@ public class Chatbox extends Activity {
 					// boucle d'écoute infinie
 					while (true) {
 
-						// on obtient le nouveau message
+						// on obtient le nouveau message pré-mis en forme
 						String message = null;
 						try {
 							message = din.readUTF();
@@ -118,8 +123,7 @@ public class Chatbox extends Activity {
 							e.printStackTrace();
 						}
 
-						// on l'encapsule dans un message lisible par le
-						// handler, en le précédant du pseudo
+						// on l'encapsule dans un message lisible par le handler
 						Message msg = new Message();
 						Bundle b = new Bundle();
 						b.putString("cle", message);
@@ -143,13 +147,11 @@ public class Chatbox extends Activity {
 	// méthode d'envoi du message vers le serveur
 	private void processMessage(String message) {
 		try {
-
 			// on l'inscrit dans le stream de sortie
 			dout.writeUTF(message);
 
 			// on clear l'EditText du message
 			newMess.setText("");
-
 		} catch (IOException ie) {
 			System.out.println(ie);
 		}
@@ -165,7 +167,7 @@ public class Chatbox extends Activity {
 			Bundle b = msg.getData();
 			String txt = b.getString("cle");
 
-			// on applique la mise en forme HTML pour avoir l'auteur en bleu
+			// on la transforme en Spanned pour que le code HTML de mise en forme soit interprété
 			Spanned styledText = Html.fromHtml(txt);
 
 			// on la met à la suite de notre discussion
@@ -217,7 +219,7 @@ public class Chatbox extends Activity {
 		case R.id.about:
 			AlertDialog.Builder builder = new AlertDialog.Builder(context);
 			builder.setMessage(
-					"DÃ©veloppée par Bastien Gounon, Melvin Masdieu, Nicolas Sagon et Benjamin Grenier \n\nVersion 1.0")
+					"Développée par Bastien Gounon, Melvin Masdieu, Nicolas Sagon et Benjamin Grenier \n\nVersion 1.0")
 					.setTitle("BDE Forum");
 			AlertDialog dialog = builder.create();
 			dialog.show();
