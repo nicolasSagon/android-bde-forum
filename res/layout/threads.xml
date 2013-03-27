@@ -25,7 +25,8 @@ style="@style/beigeBackground" >
 		    <Button
 		        android:id="@+id/page2"
 		        android:layout_height="wrap_content"
-		        android:text="@string/lastpage"/>
+		        android:text="@string/lastpage"
+		        android:visibility="gone"/>
 		
 		</TableRow>
 		
@@ -45,6 +46,7 @@ style="@style/beigeBackground" >
 
 	    <TextView
 	        android:layout_weight="1.14"
+	        android:id="@+id/thread2"
 	        android:text="@string/thread2" 
 	        style="@style/textViewThreads" />
 	    
@@ -54,6 +56,7 @@ style="@style/beigeBackground" >
 
 	    <TextView
 	        android:text="@string/thread3"
+	        android:id="@+id/thread3"
 	        style="@style/textViewThreads" />
 	    
 	    <View
@@ -62,6 +65,7 @@ style="@style/beigeBackground" >
 	    
 	    <TextView
 	        android:layout_weight="1.14"
+	        android:id="@+id/thread4"
 	        android:text="@string/thread4"
 	        style="@style/textViewThreads" />
 	    
@@ -71,6 +75,7 @@ style="@style/beigeBackground" >
 	    
 	    <TextView
 	        android:layout_weight="1.14"
+	        android:id="@+id/thread5"
 	        android:text="@string/thread5"
 	        style="@style/textViewThreads" />
 	    
@@ -80,6 +85,7 @@ style="@style/beigeBackground" >
 	    
 	    <TextView
 	        android:layout_weight="1.14"
+	        android:id="@+id/thread6"
 	        android:text="@string/thread6"
 	        style="@style/textViewThreads" />
 	    
@@ -89,6 +95,7 @@ style="@style/beigeBackground" >
 	    
 	    <TextView
 	        android:layout_weight="1.14"
+	        android:id="@+id/thread7"
 	        android:text="@string/thread7"
 	        style="@style/textViewThreads" />
 	    
@@ -106,18 +113,10 @@ style="@style/beigeBackground" >
 			android:gravity="center"
 			android:layout_marginTop="20dip" >
 			    
-			<Button
-		        android:layout_height="wrap_content"
-		        android:text="@string/firstpage" />
-			    
 			<TextView
 				android:layout_height="wrap_content"
 			    android:text="@string/page" 
 				/>
-
-			<Button
-				android:layout_height="wrap_content"
-		    	android:text="@string/lastpage"/>
 		
 		</TableRow>
 	    
