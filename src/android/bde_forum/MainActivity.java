@@ -1,7 +1,10 @@
 package android.bde_forum;
 
 import java.io.IOException;
-import java.io.StreamCorruptedException;
+
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -30,74 +33,11 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 
 		super.onCreate(savedInstanceState);
-		
+
 		setContentView(R.layout.login);
 
-		Connection conn1 = new Connection();
-
-		// on deserialise le fichier
-		try {
-			conn1.deserialisation();
-			
-			if (conn1.getEnregistrer()) {
-
-				Log.e("Connexion", "lancement");
-
-				// on lance la connexion
-				conn1.lancerConnection();
-
-				if (conn1.isConnected()) {
-
-					Intent intent = new Intent(MainActivity.this,
-							Categorie.class);
-					startActivity(intent);
-
-				} else {
-					
-					AlertDialog.Builder builder = new AlertDialog.Builder(
-							context);
-					builder.setMessage("Mauvais login ou password").setTitle(
-							"Erreur");
-					builder.setPositiveButton("Ok",
-							new DialogInterface.OnClickListener() {
-								@Override
-								public void onClick(DialogInterface dialog,
-										int id) {
-									dialog.cancel();
-									pseudo = (EditText) findViewById(R.id.Login);
-									pseudo.setText("");
-									pass = (EditText) findViewById(R.id.password);
-									pass.setText("");
-									staycon.setSelected(false);
-								}
-							});
-
-					AlertDialog dialog = builder.create();
-					dialog.show();
-				}
-			} else {
-				pseudo = (EditText) findViewById(R.id.Login);
-				pass = (EditText) findViewById(R.id.password);
-				pseudo.setText(conn1.getName());
-				pass.setText(conn1.getPass());
-			}
-		} catch (StreamCorruptedException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		} catch (IOException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		} catch (ClassNotFoundException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		} catch (NullPointerException e) {
-
-		}
-
-		
-
 		connect = (Button) findViewById(R.id.connection);
-
+		
 		connect.setOnClickListener(new View.OnClickListener() {
 
 			@Override
@@ -105,7 +45,7 @@ public class MainActivity extends Activity {
 
 				pseudo = (EditText) findViewById(R.id.Login);
 				String ps = pseudo.getText().toString();
-				
+
 				pass = (EditText) findViewById(R.id.password);
 				String pa = pass.getText().toString();
 
@@ -117,25 +57,19 @@ public class MainActivity extends Activity {
 				conn.lancerConnection();
 
 				if (conn.isConnected()) {
-					try {
-						conn.serialisation();
-					} catch (IOException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-
 					Intent intent = new Intent(MainActivity.this,
-							Categorie.class);
+							CategorieAuto.class);
 					startActivity(intent);
 
-				} else {
+					
+			} 
+					else {
 					AlertDialog.Builder builder = new AlertDialog.Builder(
 							context);
 					builder.setMessage("Mauvais login ou password").setTitle(
 							"Erreur");
 					builder.setPositiveButton("Ok",
 							new DialogInterface.OnClickListener() {
-								@Override
 								public void onClick(DialogInterface dialog,
 										int id) {
 									dialog.cancel();
@@ -154,19 +88,31 @@ public class MainActivity extends Activity {
 		});
 	}
 
-	@Override
+	// Méthode qui se déclenchera lorsque vous appuierez sur le bouton menu
+	// du
+	// téléphone
 	public boolean onCreateOptionsMenu(Menu menu) {
 
+		// Création d'un MenuInflater qui va permettre d'instancier un Menu
+		// XML
+		// en un objet Menu
 		MenuInflater inflater = getMenuInflater();
-
+		// Instanciation du menu XML spécifier en un objet Menu
 		inflater.inflate(R.layout.menumain, menu);
+
+		// Il n'est pas possible de modifier l'ic�ne d'ent�te du sous-menu
+		// via
+		// le fichier XML on le fait donc en JAVA
+		// menu.getItem(0).getSubMenu().setHeaderIcon(R.drawable.option);
 
 		return true;
 	}
 
-	@Override
+	// Méthode qui se déclenchera au clic sur un item
 	public boolean onOptionsItemSelected(MenuItem item) {
-
+		// On regarde quel item a été cliqué grâce à son id et on
+		// déclenche une
+		// action
 		switch (item.getItemId()) {
 		case R.id.option:
 			AlertDialog.Builder builder = new AlertDialog.Builder(context);
@@ -178,7 +124,7 @@ public class MainActivity extends Activity {
 		case R.id.about:
 			AlertDialog.Builder builder2 = new AlertDialog.Builder(context);
 			builder2.setMessage(
-					"Développ�e par Bastien Gounon, Melvin Masdieu, Nicolas Sagon et Benjamin Grenier \n\nVersion 1.0")
+					"Développée par Bastien Gounon, Melvin Masdieu, Nicolas Sagon et Benjamin Grenier \n\nVersion 1.0")
 					.setTitle("BDE Forum");
 			AlertDialog dialog2 = builder2.create();
 			dialog2.show();

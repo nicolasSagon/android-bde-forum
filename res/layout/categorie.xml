@@ -10,31 +10,9 @@ style="@style/beigeBackground" >
 	    android:layout_width="fill_parent"
 	    android:layout_height="27dp">
 
-		<TableRow
-		    android:gravity="center">
-		    
-		    <Button
-	        	android:id="@+id/test1"
-	        	android:layout_height="wrap_content"
-	        	android:text="@string/firstpage" />
-		    
-		    <TextView
-			    android:id="@+id/page"
-			    android:layout_height="wrap_content"
-		        android:text="@string/page" 
-		        />
-
-		    <Button
-		        android:id="@+id/page2"
-		        android:layout_height="wrap_content"
-		        android:text="@string/lastpage"/>
-		
-		</TableRow>
-		
 		<View
-			android:layout_height="2dip"
-			style="@style/separation"
-			android:layout_marginTop="20dip" />
+		    style="@style/separationfirst"
+		 />
 		
 	    <TextView
 	        android:gravity="center"
@@ -43,7 +21,6 @@ style="@style/beigeBackground" >
 	        style="@style/roseBackground" />
 	   
 	    <View
-			android:layout_height="2dip"
 			style="@style/separation" />
 
 	    <TextView
@@ -54,7 +31,6 @@ style="@style/beigeBackground" >
 	        style="@style/roseBackground" />
 	    
 	    <View
-			android:layout_height="2dip"
 			style="@style/separation" />
 
 	    <TextView
@@ -64,7 +40,6 @@ style="@style/beigeBackground" >
 	        style="@style/roseBackground" />
 	    
 	    <View
-			android:layout_height="2dip"
 			style="@style/separation" />
 	    
 	    <TextView
@@ -75,7 +50,6 @@ style="@style/beigeBackground" >
 	        style="@style/roseBackground" />
 	    
 	    <View
-			android:layout_height="2dip"
 			style="@style/separation" />
 	    
 	    <TextView
@@ -87,7 +61,6 @@ style="@style/beigeBackground" >
 	        style="@style/roseBackground" />
 	    
 	    <View
-			android:layout_height="2dip"
 			style="@style/separation" />
 	    
 	    <TextView
@@ -99,6 +72,9 @@ style="@style/beigeBackground" >
 	        android:text="@string/topic1"
 	        android:visibility="gone" />
 	    
+	    <View
+			style="@style/separation" />
+	    
 	     <TextView
 	        android:id="@+id/topic2"
 	        style="@style/roseBackground"
@@ -107,25 +83,6 @@ style="@style/beigeBackground" >
 	        android:padding="15dip"
 	        android:text="@string/topic2"
 	        android:visibility="gone" />
-	    	    	
-		<TableRow
-			android:gravity="center"
-			android:layout_marginTop="20dip" >
-			    
-			<Button
-		        android:layout_height="wrap_content"
-		        android:text="@string/firstpage" />
-			    
-			<TextView
-				android:layout_height="wrap_content"
-			    android:text="@string/page" 
-				/>
-
-			<Button
-				android:layout_height="wrap_content"
-		    	android:text="@string/lastpage"/>
-		
-		</TableRow>
 	    
 	</TableLayout>
 

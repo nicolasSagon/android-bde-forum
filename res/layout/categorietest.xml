@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+android:name=".categorie"
+android:layout_width="fill_parent"
+android:layout_height="fill_parent"
+style="@style/beigeBackground" >
+
+    <TableLayout
+	    xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:id="@+id/tableLayoutCat"
+	    android:layout_width="fill_parent"
+	    android:layout_height="27dp">
+	    
+        
+        <View xmlns:android="http://schemas.android.com/apk/res/android"
+		    android:background = "@color/separation"
+            android:layout_height ="2dip"
+		    android:layout_marginTop = "20dip"
+		    android:id="@+id/separationfirst"
+		 />
+                
+	</TableLayout>
+    
+    
+</ScrollView>
