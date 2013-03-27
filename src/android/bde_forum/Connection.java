@@ -25,12 +25,15 @@ public class Connection implements Serializable {
 	private boolean enregistrer = false;
 	private boolean connected = false;
 	private BasicTextEncryptor textEncryptor = new BasicTextEncryptor();
+	
 
 	public Connection() {
-
+		// création d'un Encryptor avec une clé de cryptage
+		textEncryptor.setPassword("123Abc");
 	}
 
 	public Connection(String pseudo, String mdp, boolean save) {
+		textEncryptor.setPassword("123Abc");
 		setName(pseudo);
 		setPass(mdp);
 		setEnregistrer(save);
@@ -62,10 +65,10 @@ public class Connection implements Serializable {
 
 	public void serialisation() throws IOException {
 
-		String cleDeCryptage = name;
+		
 		String password = pass;
 
-		String passCrypte = cryptage(cleDeCryptage, password);
+		String passCrypte = cryptage(password);
 
 		String objet = "\n" + name + "\n" + passCrypte + "\n" + enregistrer;
 		/* enregistrer dans un fichier le mot de passe (crypté) et le pseudo */
@@ -143,10 +146,9 @@ public class Connection implements Serializable {
 	}
 
 	// fonction de cryptage
-	public String cryptage(String cle, String password) {
+	public String cryptage(String password) {
 
-		// création d'un Encryptor avec une clé de cryptage
-		textEncryptor.setPassword(cle);
+		
 		String myEncryptedPassword = textEncryptor.encrypt(password);
 
 		return myEncryptedPassword;
