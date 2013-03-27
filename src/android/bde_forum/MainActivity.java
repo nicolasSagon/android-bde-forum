@@ -30,8 +30,71 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 
 		super.onCreate(savedInstanceState);
-
+		
 		setContentView(R.layout.login);
+
+		Connection conn1 = new Connection();
+
+		// on deserialise le fichier
+		try {
+			conn1.deserialisation();
+			
+			if (conn1.getEnregistrer()) {
+
+				Log.e("Connexion", "lancement");
+
+				// on lance la connexion
+				conn1.lancerConnection();
+
+				if (conn1.isConnected()) {
+
+					Intent intent = new Intent(MainActivity.this,
+							Categorie.class);
+					startActivity(intent);
+
+				} else {
+					
+					AlertDialog.Builder builder = new AlertDialog.Builder(
+							context);
+					builder.setMessage("Mauvais login ou password").setTitle(
+							"Erreur");
+					builder.setPositiveButton("Ok",
+							new DialogInterface.OnClickListener() {
+								@Override
+								public void onClick(DialogInterface dialog,
+										int id) {
+									dialog.cancel();
+									pseudo = (EditText) findViewById(R.id.Login);
+									pseudo.setText("");
+									pass = (EditText) findViewById(R.id.password);
+									pass.setText("");
+									staycon.setSelected(false);
+								}
+							});
+
+					AlertDialog dialog = builder.create();
+					dialog.show();
+				}
+			} else {
+				pseudo = (EditText) findViewById(R.id.Login);
+				pass = (EditText) findViewById(R.id.password);
+				pseudo.setText(conn1.getName());
+				pass.setText(conn1.getPass());
+			}
+		} catch (StreamCorruptedException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (ClassNotFoundException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (NullPointerException e) {
+
+		}
+
+		
 
 		connect = (Button) findViewById(R.id.connection);
 
@@ -42,7 +105,7 @@ public class MainActivity extends Activity {
 
 				pseudo = (EditText) findViewById(R.id.Login);
 				String ps = pseudo.getText().toString();
-
+				
 				pass = (EditText) findViewById(R.id.password);
 				String pa = pass.getText().toString();
 
@@ -50,22 +113,22 @@ public class MainActivity extends Activity {
 				boolean sc = staycon.isChecked();
 
 				Connection conn = new Connection(ps, pa, sc);
-				/*Log.e("Connexion", "lancement");
+				Log.e("Connexion", "lancement");
 				conn.lancerConnection();
 
-				if (conn.isConnected()) {*/
+				if (conn.isConnected()) {
 					try {
 						conn.serialisation();
 					} catch (IOException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
-					
+
 					Intent intent = new Intent(MainActivity.this,
 							Categorie.class);
 					startActivity(intent);
 
-				/*} else {
+				} else {
 					AlertDialog.Builder builder = new AlertDialog.Builder(
 							context);
 					builder.setMessage("Mauvais login ou password").setTitle(
@@ -84,7 +147,7 @@ public class MainActivity extends Activity {
 
 					AlertDialog dialog = builder.create();
 					dialog.show();
-				}*/
+				}
 
 			}
 
