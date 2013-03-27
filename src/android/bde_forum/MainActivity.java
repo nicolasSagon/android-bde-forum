@@ -37,7 +37,7 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.login);
 
 		connect = (Button) findViewById(R.id.connection);
-
+		
 		connect.setOnClickListener(new View.OnClickListener() {
 
 			@Override
@@ -58,9 +58,10 @@ public class MainActivity extends Activity {
 
 				if (conn.isConnected()) {
 					Intent intent = new Intent(MainActivity.this,
-							Categorie.class);
+							CategorieAuto.class);
 					startActivity(intent);
 
+					
 			} 
 					else {
 					AlertDialog.Builder builder = new AlertDialog.Builder(
