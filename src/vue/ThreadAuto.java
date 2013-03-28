@@ -1,4 +1,4 @@
-package android.bde_forum;
+package vue;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,6 +6,9 @@ import java.util.List;
 import donnees.DonneesServeur;
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.bde_forum.R;
+import android.bde_forum.R.id;
+import android.bde_forum.R.layout;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -56,12 +59,8 @@ public class ThreadAuto extends Activity {
 	}
 	
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-		// on récupère le statut de retour de l'activité 3 c'est à dire
-		// l'activité numéro 4
 
-		if (requestCode == 4 || requestCode == 5) { // si le code de retry est
-													// égal à 1 on stoppe
-													// l'activité 2
+		if (requestCode == 4 || requestCode == 5 || requestCode == 7) {
 			if (resultCode == 1) {
 				setResult(1);
 				finish();
@@ -70,7 +69,7 @@ public class ThreadAuto extends Activity {
 
 		if (requestCode == 5) {
 
-			Toast.makeText(this, "Modifications terminées", Toast.LENGTH_SHORT)
+			Toast.makeText(this, "Modifications termin�es", Toast.LENGTH_SHORT)
 					.show();
 
 		}
@@ -103,11 +102,7 @@ public class ThreadAuto extends Activity {
 			startActivityForResult(intent, 5);
 
 			return true;
-		case R.id.message:
-			Intent intent3 = new Intent(this, BoiteRecep.class);
-			startActivityForResult(intent3, 6);
-			return true;
-
+		
 		case R.id.chatbox:
 			Intent intent2 = new Intent(this, Chatbox.class);
 			startActivityForResult(intent2, 7);
@@ -116,7 +111,7 @@ public class ThreadAuto extends Activity {
 		case R.id.about:
 			AlertDialog.Builder builder = new AlertDialog.Builder(context);
 			builder.setMessage(
-					"Développée par Bastien Gounon, Melvin Masdieu, Nicolas Sagon et Benjamin Grenier \n\nVersion 1.0")
+					"D�velopp�e par Bastien Gounon, Melvin Masdieu, Nicolas Sagon et Benjamin Grenier \n\nVersion 1.0")
 					.setTitle("BDE Forum");
 			AlertDialog dialog = builder.create();
 			dialog.show();

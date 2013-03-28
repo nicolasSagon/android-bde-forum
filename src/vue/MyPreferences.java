@@ -1,5 +1,7 @@
-package android.bde_forum;
+package vue;
 
+import android.bde_forum.R;
+import android.bde_forum.R.xml;
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
 

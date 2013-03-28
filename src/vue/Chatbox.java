@@ -1,4 +1,4 @@
-package android.bde_forum;
+package vue;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -6,8 +6,12 @@ import java.io.IOException;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
+
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.bde_forum.R;
+import android.bde_forum.R.id;
+import android.bde_forum.R.layout;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -210,10 +214,6 @@ public class Chatbox extends Activity {
 			Intent intent = new Intent(this, MyPreferences.class);
 			startActivityForResult(intent, 5);
 
-			return true;
-		case R.id.message:
-			Intent intent3 = new Intent(this, BoiteRecep.class);
-			startActivityForResult(intent3, 6);
 			return true;
 
 		case R.id.about:
