@@ -7,15 +7,11 @@
         android:icon="@drawable/settings"
         android:title="Options">
 
-        <menu android:id="@+id/sousmenu">
+        <menu android:id="@+id/sousmenu" >
 
             <item
                 android:id="@+id/pref"
                 android:title="Préférences"/>
-
-            <item
-                android:id="@+id/message"
-                android:title="Messagerie"/>
         </menu>
     </item>
 

@@ -9,14 +9,14 @@
         android:targetSdkVersion="8" />
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/banniere"
         android:label="@string/app_name" >
         <receiver
-            android:name="android.bde_forum.AppWidget"
+            android:name="widget.AppWidget"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
@@ -28,7 +28,7 @@
         </receiver>
 
         <activity
-            android:name="android.bde_forum.MainActivity"
+            android:name="vue.MainActivity"
             android:label="@string/app_name"
             android:windowSoftInputMode="stateHidden" >
             <intent-filter>
@@ -37,18 +37,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="vue.CategorieAuto" />
+        <activity android:name="vue.Posts" />
         <activity
-            android:name="android.bde_forum.SettingsActivity"
-            android:label="@string/title_activity_settings" >
-        </activity>
-        <activity android:name="android.bde_forum.Categorie" />
-        <activity android:name="android.bde_forum.CategorieAuto" />
-        <activity android:name="android.bde_forum.Threads" />
-        <activity android:name="android.bde_forum.Posts" />
-        <activity android:name="android.bde_forum.Chatbox"
-            	  android:configChanges="keyboardHidden|orientation" />
-        <activity android:name="android.bde_forum.MyPreferences" />
-        <activity android:name="android.bde_forum.ThreadAuto" />
+            android:name="vue.Chatbox"
+            android:configChanges="keyboardHidden|orientation" />
+        <activity android:name="vue.MyPreferences" />
+        <activity android:name="vue.ThreadAuto" />
     </application>
 
 </manifest>

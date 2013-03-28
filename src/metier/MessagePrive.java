@@ -1,4 +1,4 @@
-package android.bde_forum;
+package metier;
 
 public class MessagePrive {
 

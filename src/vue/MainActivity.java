@@ -1,10 +1,16 @@
-package android.bde_forum;
+package vue;
 
 import java.io.IOException;
 import java.io.StreamCorruptedException;
 
+
+import donnees.Connection;
+
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.bde_forum.R;
+import android.bde_forum.R.id;
+import android.bde_forum.R.layout;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -50,7 +56,7 @@ public class MainActivity extends Activity {
 
 					Intent intent = new Intent(MainActivity.this,
 							CategorieAuto.class);
-					startActivity(intent);
+					startActivityForResult(intent, 10);
 
 				} else {
 					
@@ -79,7 +85,7 @@ public class MainActivity extends Activity {
 				pseudo = (EditText) findViewById(R.id.Login);
 				pass = (EditText) findViewById(R.id.password);
 				pseudo.setText(conn1.getName());
-				pass.setText(conn1.getPass());
+				
 			}
 		} catch (StreamCorruptedException e1) {
 			// TODO Auto-generated catch block
@@ -170,15 +176,15 @@ public class MainActivity extends Activity {
 		switch (item.getItemId()) {
 		case R.id.option:
 			AlertDialog.Builder builder = new AlertDialog.Builder(context);
-			builder.setMessage("Veuillez vous connecter pour accÃ©der aux options");
-			builder.setTitle("ProblÃ¨me de connexion");
+			builder.setMessage("Veuillez vous connecter pour accéder aux options");
+			builder.setTitle("Problème de connexion");
 			AlertDialog dialog = builder.create();
 			dialog.show();
 			return true;
 		case R.id.about:
 			AlertDialog.Builder builder2 = new AlertDialog.Builder(context);
 			builder2.setMessage(
-					"DÃ©veloppï¿½e par Bastien Gounon, Melvin Masdieu, Nicolas Sagon et Benjamin Grenier \n\nVersion 1.0")
+					"Développée par Bastien Gounon, Melvin Masdieu, Nicolas Sagon et Benjamin Grenier \n\nVersion 1.0")
 					.setTitle("BDE Forum");
 			AlertDialog dialog2 = builder2.create();
 			dialog2.show();

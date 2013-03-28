@@ -1,8 +1,12 @@
-package android.bde_forum;
+package widget;
 
+import metier.MessagePrive;
 import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
+import android.bde_forum.R;
+import android.bde_forum.R.id;
+import android.bde_forum.R.layout;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -15,8 +19,8 @@ public class AppWidget extends AppWidgetProvider {
 	private MessagePrive messageArray[] = {
 			new MessagePrive("melvin", "Salut comment vas tu ?"),
 			new MessagePrive("nicolas", "Tu peux me passer le tp de reseau ?"),
-			new MessagePrive("benjamin", "Je vais m'acheter une moto !!! vroom"),
-			new MessagePrive("bastien", "De toute façon l'iut ça sert à rien je rage quit !") };
+			new MessagePrive("benjamin", "Bonjour � tous !"),
+			new MessagePrive("bastien", "Enorme l'appli !") };
 
 	
 	// Intitulé de l'extra qui contient la direction du défilé

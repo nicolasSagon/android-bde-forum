@@ -1,47 +1,31 @@
-package android.bde_forum;
+package vue;
 
-import java.io.BufferedInputStream;
-import java.io.DataInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.xmlpull.v1.XmlPullParser;
-import org.xmlpull.v1.XmlPullParserException;
-
-import vue.CategorieTextView;
-import vue.TopicTextView;
-
-import donnees.AttributGetter;
-import donnees.DonneesServeur;
-
+import metier.Categorie;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.bde_forum.R;
+import android.bde_forum.R.color;
+import android.bde_forum.R.id;
+import android.bde_forum.R.layout;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
-import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.util.AttributeSet;
 import android.util.Log;
 import android.util.TypedValue;
-import android.util.Xml;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
-import android.widget.LinearLayout;
-import android.widget.ScrollView;
 import android.widget.TableLayout;
-import android.widget.TableRow;
-import android.widget.TextView;
 import android.widget.Toast;
-import metier.Categorie;
+import donnees.DonneesServeur;
 
 @SuppressLint("ResourceAsColor")
 public class CategorieAuto extends Activity {
@@ -50,7 +34,6 @@ public class CategorieAuto extends Activity {
 	private List<Categorie> donneesCat;
 	private List<CategorieTextView> listTextView;
 	final Context context = this;
-	private int[] tableIndex = new int[15];
 	
 	
 	@SuppressLint("ResourceAsColor")
@@ -126,7 +109,7 @@ public class CategorieAuto extends Activity {
 						Intent intent = new Intent(CategorieAuto.this,
 								ThreadAuto.class);
 						intent.putExtras(objetbunble);
-						startActivity(intent);
+						startActivityForResult(intent, 11);
 					}
 				});
 				tLayout.addView(listTextView.get(i).getTextView(j));
@@ -137,14 +120,14 @@ public class CategorieAuto extends Activity {
 	}
 	
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-		if (requestCode == 3 || requestCode == 5) {
+		if (requestCode == 3 || requestCode == 5 || requestCode == 11 || requestCode == 7) {
 
 			if (resultCode == 1) {
 				finish();
 			}
 			if (requestCode == 5) {
 
-				Toast.makeText(this, "Modifications terminÃ©es",
+				Toast.makeText(this, "Modifications terminées",
 						Toast.LENGTH_SHORT).show();
 
 			}
@@ -169,10 +152,6 @@ public class CategorieAuto extends Activity {
 			startActivityForResult(intent, 5);
 
 			return true;
-		case R.id.message:
-			Intent intent3 = new Intent(this, BoiteRecep.class);
-			startActivityForResult(intent3, 6);
-			return true;
 
 		case R.id.chatbox:
 			Intent intent2 = new Intent(this, Chatbox.class);
@@ -183,7 +162,7 @@ public class CategorieAuto extends Activity {
 
 			AlertDialog.Builder builder = new AlertDialog.Builder(context);
 			builder.setMessage(
-					"DÃ©veloppÃ©e par Bastien Gounon, Melvin Masdieu, Nicolas Sagon et Benjamin Grenier \n\nVersion 1.0")
+					"Développée par Bastien Gounon, Melvin Masdieu, Nicolas Sagon et Benjamin Grenier \n\nVersion 1.0")
 					.setTitle("BDE Forum");
 			AlertDialog dialog = builder.create();
 			dialog.show();
